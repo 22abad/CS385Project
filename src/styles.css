@@ -1,0 +1,36 @@
+.bg {
+  background-image: url("https://www.publicdomainpictures.net/pictures/170000/velka/leaf-texture-1463652166QZu.jpg");
+  height: auto;
+  text-align: center;
+  width: 100vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+#title {
+  font-size: 40px;
+}
+
+.white-hr {
+  border: none;
+  height: 2vh;
+  width: 50vw;
+  margin-left: 25vw;
+  color: #ffff;
+  background-color: #ffff;
+}
+
+#MainHeader {
+  text-align: center;
+  font-size: 50px;
+}
+
+.main {
+  padding-top: 5vh;
+}
+
+#WhyUseHeader {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 7vh;
+}
