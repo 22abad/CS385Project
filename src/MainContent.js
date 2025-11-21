@@ -1,50 +1,63 @@
-// src/MainContent.js
 import React from "react";
 import groceryBag from "./content/GroceryBag.png";
-import Browse from "./Browse"; // Import the new Browse component
+import Browse from "./Browse"; // Import the Browse component
 import "./styles.css";
 
 function MainContent() {
   return (
     <>
       <div className="main container-fluid">
-        
-        {/* 1. Hero / Intro Section */}
-        <div className="text-center">
-            <h1 id="MainHeader">Prevent Food Waste Today!</h1>
-            <p className="lead text-muted">
-                Did you know? 1/3 of all food produced is wasted. Join us to rescue tasty food.
-            </p>
-            <img
-            src={groceryBag}
-            className="mx-auto d-block img-fluid"
-            alt="Grocery Bag"
-            style={{ maxWidth: "300px", marginBottom: "30px" }} 
-            />
-        </div>
+        {/* --- Intro Section (Teammate's Design) --- */}
+        <h1 id="MainHeader">Prevent Food Waste Today!</h1>
 
-        {/* 2. How it Works Section */}
-        <div className="container my-5">
-            <h1 id="WhyUseHeader" className="mb-4">How it works</h1>
-            <div className="row text-center">
-                <div className="col-md-4">
-                    <h3>1. Find</h3>
-                    <p>Browse stores near you and find a Magic Bag.</p>
-                </div>
-                <div className="col-md-4">
-                    <h3>2. Reserve</h3>
-                    <p>Pay in the app and get your pickup time.</p>
-                </div>
-                <div className="col-md-4">
-                    <h3>3. Enjoy</h3>
-                    <p>Pick up your food and enjoy knowing you helped the planet.</p>
-                </div>
+        <div className="row top-circles">
+          <div className="col-6 block">
+            <div className="circle">
+              <p className="Grocery-Text">Get Food for 1/2 Price!</p>
             </div>
+          </div>
+          <div className="col-6 block">
+            <div className="circle">
+              <p className="Grocery-Text">Reduce Food Waste!</p>
+            </div>
+          </div>
         </div>
 
-        {/* 3. Browse/List Section */}
-        <hr className="my-5"/>
-        <Browse /> 
+        <div className="row bagImage">
+          <div className="col-12">
+            <img
+              src={groceryBag}
+              className="mx-auto d-block img-fluid center-image"
+              alt="Grocery Bag"
+            />
+          </div>
+        </div>
+
+        <div className="row bottom-circles">
+          <div className="col-6 block">
+            <div className="circle">
+              <p className="Grocery-Text">Try Food From New Places!</p>
+            </div>
+          </div>
+          <div className="col-6 block">
+            <div className="circle">
+              <p className="Grocery-Text">Reduce Carbon Emissions!</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="row bottom-circle">
+          <div className="col-12 block">
+            <div className="circle">
+              <p className="Grocery-Text">Discover New Foods!</p>
+            </div>
+          </div>
+        </div>
+        {/* --- End of Intro Section --- */}
+
+        {/* --- Browse Section (Store List) --- */}
+        <hr className="my-5" />
+        <Browse />
       </div>
     </>
   );
