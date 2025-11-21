@@ -1,2 +1,22 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# 依赖包 (最重要！)
+node_modules/
+.pnp
+.pnp.js
+
+# 构建产物
+build/
+dist/
+
+# Mac 系统文件
+.DS_Store
+
+# 环境变量
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 编辑器配置
+.vscode/
+.idea/

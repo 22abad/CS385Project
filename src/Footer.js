@@ -1,11 +1,114 @@
-import "./styles.css";
+// src/Footer.js
 import React from "react";
+import "./styles.css";
 
 function Footer() {
   return (
-    <>
-      <h1>This is the Footer</h1>
-    </>
+    // Main Footer Container: Dark background, white text, margin-top to separate from content
+    <footer className="bg-dark text-white pt-5 pb-4 mt-5">
+      
+      <div className="container text-center text-md-start">
+        <div className="row text-center text-md-start">
+
+          {/* Column 1: Brand Name & Description */}
+          <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+              EcoBites 🌱
+            </h5>
+            <p>
+              Join us in the fight against food waste. Save money, save food, 
+              and save the planet—one meal at a time.
+            </p>
+          </div>
+
+          {/* Column 2: Useful Links */}
+          <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+              Discover
+            </h5>
+            <p>
+              <a href="#" className="text-white" style={{ textDecoration: "none" }}>
+                Browse Stores
+              </a>
+            </p>
+            <p>
+              <a href="#" className="text-white" style={{ textDecoration: "none" }}>
+                How it Works
+              </a>
+            </p>
+            <p>
+              <a href="#" className="text-white" style={{ textDecoration: "none" }}>
+                For Business
+              </a>
+            </p>
+          </div>
+
+          {/* Column 3: Useful Links 2 */}
+          <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+              Company
+            </h5>
+            <p>
+              <a href="#" className="text-white" style={{ textDecoration: "none" }}>
+                About Us
+              </a>
+            </p>
+            <p>
+              <a href="#" className="text-white" style={{ textDecoration: "none" }}>
+                Careers
+              </a>
+            </p>
+            <p>
+              <a href="#" className="text-white" style={{ textDecoration: "none" }}>
+                Contact
+              </a>
+            </p>
+          </div>
+
+          {/* Column 4: Contact Info */}
+          <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
+              Contact
+            </h5>
+            <p>📍 Maynooth, Co. Kildare</p>
+            <p>✉️ info@ecobites.ie</p>
+            <p>📞 +353 87 123 4567</p>
+          </div>
+        </div>
+
+        <hr className="mb-4" />
+
+        {/* Bottom Copyright Section */}
+        <div className="row align-items-center">
+          <div className="col-md-7 col-lg-8">
+            <p>
+              © {new Date().getFullYear()} Copyright:
+              <a href="#" style={{ textDecoration: "none" }}>
+                <strong className="text-warning"> EcoBites Project</strong>
+              </a>
+            </p>
+          </div>
+          
+          {/* Social Media Placeholders (Text for now) */}
+          <div className="col-md-5 col-lg-4">
+            <div className="text-center text-md-end">
+              <ul className="list-unstyled list-inline">
+                <li className="list-inline-item">
+                  <a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: "23px" }}>
+                    <i className="fab fa-facebook"></i>
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: "23px" }}>
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
 
