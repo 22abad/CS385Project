@@ -1,6 +1,16 @@
 import "./styles.css";
 import React from "react";
 
+import BrowsePage from "./BrowsePage";
+
+import OrderPage from "./OrderPage";
+
+import AboutUs from "./AboutUs";
+
+import AboutFoodWaste from "./AboutFoodWaste";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 function Header() {
   return (
     <>
@@ -22,6 +32,34 @@ function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            {/* Navigation WIP
+            <Routes className="navbar-nav me-auto mb-2 mb-lg-0">
+              <Route
+                path="/browse"
+                element={<BrowsePage />}
+                className="nav-item"
+              >
+                Browse
+              </Route>
+              <Route
+                path="/browse"
+                element={<OrderPage />}
+                className="nav-item"
+              >
+                Order
+              </Route>
+              <Route path="/browse" element={<AboutUs />} className="nav-item">
+                About Us
+              </Route>
+              <Route
+                path="/browse"
+                element={<AboutFoodWaste />}
+                className="nav-item"
+              >
+                About Food Waste
+              </Route>
+  </Routes> */}
+
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="#">
