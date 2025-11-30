@@ -1,7 +1,9 @@
 import React from "react";
-import groceryBag from "./content/GroceryBag.png";
-import Browse from "./Browse"; // Import the Browse component
-import "./styles.css";
+import groceryBag from "../content/GroceryBag.png";
+import Browse from "../Browse"; // Import the Browse component
+import "../styles.css";
+
+import { Routes, Route } from "react-router-dom";
 
 function MainContent() {
   return (

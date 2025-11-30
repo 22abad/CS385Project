@@ -1,13 +1,13 @@
-import "./styles.css";
+import "../styles.css";
 import React from "react";
 
-import BrowsePage from "./BrowsePage";
+import BrowsePage from "../pages/BrowsePage";
 
-import OrderPage from "./OrderPage";
+import OrderPage from "../pages/OrderPage";
 
-import AboutUs from "./AboutUs";
+import AboutUs from "../pages/AboutUs";
 
-import AboutFoodWaste from "./AboutFoodWaste";
+import AboutFoodWaste from "../pages/AboutFoodWaste";
 
 import { Link } from "react-router-dom";
 
@@ -17,9 +17,9 @@ function Header() {
       {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             EcoBites 🌱
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
