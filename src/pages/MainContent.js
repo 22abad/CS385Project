@@ -31,6 +31,7 @@ function MainContent() {
               src={groceryBag}
               className="mx-auto d-block img-fluid center-image"
               alt="Grocery Bag"
+              id="GroceryImage"
             />
           </div>
         </div>

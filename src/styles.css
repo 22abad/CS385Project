@@ -29,7 +29,7 @@
 /* --- Header Styles --- */
 #MainHeader {
   text-align: center;
-  font-size: 50px;
+  font-size: 7vw;
   padding-bottom: 5vh;
   color: #2c3e50;
   font-weight: bold;
@@ -42,11 +42,11 @@
   background-color: #deffdb;
 }
 
-/* --- Teammate's Circle Design Styles --- */
+/* --- Alyssa's Circle Design Styles --- */
 .Grocery-Text {
-  font-size: 18px;
+  font-size: 3.5vw;
   font-weight: bold;
-  padding: 10px;
+  padding: 4vw;
 }
 
 .center-image {
@@ -64,8 +64,8 @@
   background: #027020;
   border-radius: 50%; /* Standard circular border */
   color: white;
-  height: 175px;
-  width: 175px;
+  height: 30vw;
+  width: 30vw;
   display: flex; /* Flexbox for centering text */
   align-items: center;
   justify-content: center;
