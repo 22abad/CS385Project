@@ -1,14 +1,6 @@
 import "../styles.css";
 import React from "react";
 
-import BrowsePage from "../pages/BrowsePage";
-
-import OrderPage from "../pages/OrderPage";
-
-import AboutUs from "../pages/AboutUs";
-
-import AboutFoodWaste from "../pages/AboutFoodWaste";
-
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -57,9 +49,6 @@ function Header() {
           </div>
         </div>
       </nav>
-
-      {/* Spacer to prevent content from being hidden behind fixed navbar */}
-      <div style={{ marginTop: "80px" }}></div>
     </>
   );
 }

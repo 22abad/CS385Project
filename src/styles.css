@@ -1,13 +1,7 @@
-/* --- General Styles --- */
-.bg {
-  background-image: url("https://www.publicdomainpictures.net/pictures/170000/velka/leaf-texture-1463652166QZu.jpg");
-  height: auto;
-  text-align: center;
-  width: 100vw;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  background-size: cover;
-  background-position: center;
+/* --- Body Style Override --- */
+body {
+  margin: 0;
+  padding-top: 56px;
 }
 
 /* --- Navbar Styles --- */
@@ -124,4 +118,16 @@
   font-size: 1.5rem;
   font-weight: bold;
   transform: rotate(-15deg);
+}
+
+/* --- Food Waste Page Background Image --- */
+.WastePageTitle {
+  background-image: url(./content/FoodWaste.png);
+  height: auto;
+  text-align: center;
+  width: 100vw;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  background-size: cover;
+  background-position: center;
 }

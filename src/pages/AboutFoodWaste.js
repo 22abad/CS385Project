@@ -1,3 +1,9 @@
 export default function AboutFoodWaste() {
-  return <></>;
+  return (
+    <>
+      <div className="WastePageTitle container-fluid">
+        <h1>About Food Waste</h1>
+      </div>
+    </>
+  );
 }

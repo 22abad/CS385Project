@@ -26,7 +26,7 @@ export default function App() {
         {/*Navigation to About Us Page*/}
         <Route path="/about" element={<AboutUs />} />
         {/*Navigation to Food Wase info page*/}
-        <Route path="/food-waste" element={<AboutFoodWaste />} />
+        <Route path="/AboutFoodWaste" element={<AboutFoodWaste />} />
       </Routes>
       <div id="Footer" className="container-fluid p-0">
         <Footer />

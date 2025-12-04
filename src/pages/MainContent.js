@@ -9,7 +9,7 @@ function MainContent() {
   return (
     <>
       <div className="main container-fluid">
-        {/* --- Intro Section (Teammate's Design) --- */}
+        {/* --- Intro Section (Alyssa's Design) --- */}
         <h1 id="MainHeader">Prevent Food Waste Today!</h1>
 
         <div className="row top-circles">
