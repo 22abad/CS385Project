@@ -145,8 +145,15 @@ body {
   text-align: center;
 }
 
-
 .mask {
   background-color: rgba(0, 0, 0, 0.6);
   height: 50vh;
+}
+
+img {
+  height: 20vh;
+}
+
+.row {
+  margin-bottom: 7vh;
 }
