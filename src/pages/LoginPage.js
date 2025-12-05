@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "../firebase"; // Import auth functions
-import { onAuthStateChanged } from "firebase/auth";
+import { useAuth } from "../contexts/AuthContext"; // Import useAuth hook
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(true); // Add loading state for initial user check
+  const [loading, setLoading] = useState(false); // No longer strictly needed for initial user creation, but good for login/register ops
   const navigate = useNavigate();
+  const { login, signup, currentUser } = useAuth(); // Get login and signup from AuthContext
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/order");
+    }
+  }, [currentUser, navigate]);
 
   const getFriendlyErrorMessage = (errorCode) => {
     switch (errorCode) {
@@ -31,92 +38,50 @@ export default function LoginPage() {
     }
   };
 
-  // Temporary function to create default users if they don't exist
-  useEffect(() => {
-    const createDefaultUsers = async () => {
-      const usersToCreate = [
-        { email: "admin@example.com", password: "admin" },
-        { email: "guest1@example.com", password: "guest1" },
-        { email: "guest2@example.com", password: "guest2" },
-      ];
-
-      for (const user of usersToCreate) {
-        // Try to register the user. If they already exist, Firebase will throw an error 'auth/email-already-in-use'.
-        try {
-          await createUserWithEmailAndPassword(auth, user.email, user.password);
-          console.log(`User ${user.email} created successfully.`);
-        } catch (createError) {
-          if (createError.code === 'auth/email-already-in-use') {
-            console.log(`User ${user.email} already exists.`);
-          } else {
-            console.error(`Error creating user ${user.email}:`, createError.message);
-          }
-        }
-      }
-      setLoading(false); // Set loading to false after default users check
-    };
-    createDefaultUsers();
-  }, []); // Run once on component mount
-
-  // Listen for auth state changes to redirect
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/order"); // Redirect to the order page after login
-      }
-      // Only set loading to false here if the default user creation is not handling it
-      // For now, let's keep it handled by createDefaultUsers for initial setup
-    });
-    return () => unsubscribe();
-  }, [navigate]);
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     if (!email || !password) {
       setError("邮箱和密码不能为空。");
+      setLoading(false);
       return;
     }
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Redirection handled by onAuthStateChanged effect
+      await login(email, password);
+      // Redirection is handled by the useEffect based on currentUser
     } catch (err) {
       setError(getFriendlyErrorMessage(err.code));
     }
+    setLoading(false);
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     if (!email || !password) {
       setError("邮箱和密码不能为空。");
+      setLoading(false);
       return;
     }
     if (password.length < 6) {
       setError("密码至少需要6个字符。");
+      setLoading(false);
       return;
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Redirection handled by onAuthStateChanged effect
+      await signup(email, password);
+      // Redirection is handled by the useEffect based on currentUser
     } catch (err) {
       setError(getFriendlyErrorMessage(err.code));
     }
+    setLoading(false);
   };
-
-  if (loading) {
-    return (
-      <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="container mt-5">
@@ -136,6 +101,7 @@ export default function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter email"
                     required
+                    disabled={loading}
                   />
                 </div>
                 <div className="mb-3">
@@ -148,14 +114,15 @@ export default function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
                     required
+                    disabled={loading}
                   />
                 </div>
                 {error && <div className="alert alert-danger">{error}</div>}
                 <div className="d-grid gap-2">
-                  <button type="submit" className="btn btn-primary" onClick={handleLogin}>
+                  <button type="submit" className="btn btn-primary" onClick={handleLogin} disabled={loading}>
                     Login
                   </button>
-                  <button type="button" className="btn btn-secondary" onClick={handleRegister}>
+                  <button type="button" className="btn btn-secondary" onClick={handleRegister} disabled={loading}>
                     Register
                   </button>
                 </div>

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { db } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 const AddDataButton = () => {
   const sampleNames = ["Green Grocer", "Corner Store", "The Food Market", "Daily Deli", "City Eats", "Farm Fresh"];
   const sampleCategories = ["Groceries", "Baked Goods", "Meals", "Dairy", "Produce"];
-  const foodImages = [
+  const foodImagesPool = [ // Renamed to avoid confusion with shuffled list
     "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
     "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
     "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
@@ -13,6 +13,38 @@ const AddDataButton = () => {
     "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445",
     "https://images.unsplash.com/photo-1482049016688-2d3e1b311543",
   ];
+
+  const [shuffledImages, setShuffledImages] = useState([]);
+  const imageIndex = useRef(0); // Using useRef to persist index across renders without triggering re-renders unnecessarily
+
+  useEffect(() => {
+    // Initial shuffle of images when component mounts
+    shuffleImages();
+  }, []);
+
+  const shuffleArray = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+
+  const shuffleImages = () => {
+    setShuffledImages(shuffleArray(foodImagesPool));
+    imageIndex.current = 0; // Reset index after shuffling
+  };
+
+  const getNextImage = () => {
+    if (imageIndex.current >= shuffledImages.length) {
+      // If all images have been used, reshuffle
+      shuffleImages();
+    }
+    const image = shuffledImages[imageIndex.current];
+    imageIndex.current += 1;
+    return image;
+  };
 
   const generateRandomProduct = () => {
     const name = sampleNames[Math.floor(Math.random() * sampleNames.length)];
@@ -27,29 +59,53 @@ const AddDataButton = () => {
       originalPrice: `€${originalPrice}`,
       itemsLeft: Math.floor(Math.random() * 11),
       distance: `${(Math.random() * 5).toFixed(1)} km`,
-      image: foodImages[Math.floor(Math.random() * foodImages.length)],
+      image: getNextImage(), // Use the unique image getter
     };
   };
 
   const handleAddData = async () => {
-    console.log("Adding 10 random products to Firestore...");
+    console.log("Adding 5 random products to Firestore...");
     try {
       const storesCollection = collection(db, "stores");
-      for (let i = 0; i < 10; i++) {
+      const addPromises = [];
+      for (let i = 0; i < 5; i++) { // Loop 5 times to add 5 products
         const newProduct = generateRandomProduct();
-        await addDoc(storesCollection, newProduct);
+        addPromises.push(addDoc(storesCollection, newProduct));
       }
-      alert("Successfully added 10 random products to your Firestore database!");
+      await Promise.all(addPromises); // Wait for all 5 products to be added
+      alert("Successfully added 5 random products to your Firestore database!");
     } catch (error) {
       console.error("Error adding documents: ", error);
       alert("Error adding products. Check the console for details.");
     }
   };
 
+  const handleDeleteAllData = async () => {
+    if (!window.confirm("Are you sure you want to delete ALL products from Firestore? This action cannot be undone.")) {
+      return;
+    }
+    console.log("Deleting all products from Firestore...");
+    try {
+      const querySnapshot = await getDocs(collection(db, "stores"));
+      const deletePromises = querySnapshot.docs.map(d => deleteDoc(doc(db, "stores", d.id)));
+      await Promise.all(deletePromises);
+      alert("Successfully deleted all products from your Firestore database!");
+      window.location.reload(); // Reload the page to reflect changes
+    } catch (error) {
+      console.error("Error deleting documents: ", error);
+      alert("Error deleting products. Check the console for details.");
+    }
+  };
+
   return (
-    <button className="btn btn-secondary m-3" onClick={handleAddData}>
-      Add 10 Random Products to DB
-    </button>
+    <div>
+      <button className="btn btn-secondary m-3" onClick={handleAddData}>
+        Add 5 Random Products to DB
+      </button>
+      <button className="btn btn-danger m-3" onClick={handleDeleteAllData}>
+        Delete All Products
+      </button>
+    </div>
   );
 };
 

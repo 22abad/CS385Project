@@ -3,16 +3,16 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 
-// TODO: Add your web app's Firebase configuration
+// Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCOFwDHIi3blxE-qYKoavVrlxiooKoohKw",
-  authDomain: "ecobite-d7bf3.firebaseapp.com",
-  projectId: "ecobite-d7bf3",
-  storageBucket: "ecobite-d7bf3.firebasestorage.app",
-  messagingSenderId: "26659449470",
-  appId: "1:26659449470:web:b45288f48c7550129e462f",
-  measurementId: "G-B83324G2W3",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase

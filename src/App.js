@@ -9,6 +9,8 @@ import AboutUs from "./pages/AboutUs";
 import AboutFoodWaste from "./pages/AboutFoodWaste";
 import LoginPage from "./pages/LoginPage"; // Import LoginPage
 import PrivateRoute from "./components/PrivateRoute"; // Import PrivateRoute
+import ContactPage from "./pages/ContactPage"; // Import ContactPage
+import HowItWorksPage from "./pages/HowItWorksPage"; // Import HowItWorksPage
 
 import { Routes, Route } from "react-router-dom";
 
@@ -38,6 +40,10 @@ export default function App() {
         <Route path="/about" element={<AboutUs />} />
         {/*Navigation to Food Wase info page*/}
         <Route path="/AboutFoodWaste" element={<AboutFoodWaste />} />
+        {/*Navigation to Contact Page*/}
+        <Route path="/contact" element={<ContactPage />} />
+        {/*Navigation to How It Works Page*/}
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
       </Routes>
       <div id="Footer" className="container-fluid p-0">
         <Footer />

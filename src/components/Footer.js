@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles.css";
+import { Link } from "react-router-dom"; // Import Link
 
 function Footer() {
   return (
@@ -24,22 +25,14 @@ function Footer() {
               Discover
             </h5>
             <p>
-              <a
-                href="#"
-                className="text-white"
-                style={{ textDecoration: "none" }}
-              >
+              <Link to="/browse" className="text-white" style={{ textDecoration: "none" }}>
                 Browse Stores
-              </a>
+              </Link>
             </p>
             <p>
-              <a
-                href="#"
-                className="text-white"
-                style={{ textDecoration: "none" }}
-              >
+              <Link to="/how-it-works" className="text-white" style={{ textDecoration: "none" }}>
                 How it Works
-              </a>
+              </Link>
             </p>
           </div>
 
@@ -49,22 +42,14 @@ function Footer() {
               Company
             </h5>
             <p>
-              <a
-                href="#"
-                className="text-white"
-                style={{ textDecoration: "none" }}
-              >
+              <Link to="/about" className="text-white" style={{ textDecoration: "none" }}>
                 About Us
-              </a>
+              </Link>
             </p>
             <p>
-              <a
-                href="#"
-                className="text-white"
-                style={{ textDecoration: "none" }}
-              >
+              <Link to="/contact" className="text-white" style={{ textDecoration: "none" }}>
                 Contact
-              </a>
+              </Link>
             </p>
           </div>
 

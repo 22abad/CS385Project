@@ -38,14 +38,14 @@ body {
 
 /* --- Alyssa's Circle Design Styles --- */
 .Grocery-Text {
-  font-size: 3.5vw;
+  font-size: 2.5vw; /* Reduced font size */
   font-weight: bold;
-  padding: 4vw;
+  padding: 2vw; /* Reduced padding */
 }
 
 .center-image {
   width: 100%;
-  max-width: 250px;
+  max-width: 500px; /* Increased size */
   margin: 20px auto;
 }
 
@@ -58,8 +58,8 @@ body {
   background: #027020;
   border-radius: 50%; /* Standard circular border */
   color: white;
-  height: 30vw;
-  width: 30vw;
+  height: 20vw; /* Reduced size */
+  width: 20vw;  /* Reduced size */
   display: flex; /* Flexbox for centering text */
   align-items: center;
   justify-content: center;
