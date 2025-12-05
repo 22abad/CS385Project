@@ -20,21 +20,21 @@ export default function LoginPage() {
   const getFriendlyErrorMessage = (errorCode) => {
     switch (errorCode) {
       case "auth/invalid-email":
-        return "邮箱地址格式不正确。";
+        return "Invalid email address format.";
       case "auth/user-disabled":
-        return "此用户已被禁用。";
+        return "This user has been disabled.";
       case "auth/user-not-found":
-        return "未找到此邮箱对应的用户。";
+        return "No user found with this email.";
       case "auth/wrong-password":
-        return "密码错误。";
+        return "Incorrect password.";
       case "auth/email-already-in-use":
-        return "该邮箱已被注册。";
+        return "This email is already in use.";
       case "auth/weak-password":
-        return "密码至少需要6个字符。";
+        return "Password must be at least 6 characters long.";
       case "auth/operation-not-allowed":
-        return "邮箱/密码登录未启用。请联系管理员。";
+        return "Email/password login is not enabled. Please contact administrator.";
       default:
-        return "发生未知错误，请重试。";
+        return "An unknown error occurred. Please try again.";
     }
   };
 
@@ -44,7 +44,7 @@ export default function LoginPage() {
     setLoading(true);
 
     if (!email || !password) {
-      setError("邮箱和密码不能为空。");
+      setError("Email and password cannot be empty.");
       setLoading(false);
       return;
     }
@@ -64,12 +64,12 @@ export default function LoginPage() {
     setLoading(true);
 
     if (!email || !password) {
-      setError("邮箱和密码不能为空。");
+      setError("Email and password cannot be empty.");
       setLoading(false);
       return;
     }
     if (password.length < 6) {
-      setError("密码至少需要6个字符。");
+      setError("Password must be at least 6 characters long.");
       setLoading(false);
       return;
     }
