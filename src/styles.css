@@ -151,9 +151,321 @@ body {
 }
 
 img {
-  height: 20vh;
+  height: 30vh;
 }
 
 .row {
   margin-bottom: 7vh;
 }
+
+.FoodWasteDefinition {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#defHeadline {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.FoodFacts {
+  padding-top: 10vh;
+}
+
+.col {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+/* ----- Apple Text Background ----- */
+
+#AppleTxt {
+  font-size: 4vh;
+  font-weight: bold;
+  border: rgb(83, 64, 40);
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 100vw;
+
+  /* fallback for old browsers */
+  background: #d92e33;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #d92e33, #e0b231);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #d92e33, #e0b231);
+}
+
+/* ----- Banana Text Background----- */
+
+#BananaTxt {
+  display: flex;
+  align-items: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-radius: 25px;
+  position: relative;
+  font-size: 3vh;
+  font-weight: bold;
+
+  border: #a26f35;
+  border-width: 4px;
+  border-style: solid;
+
+  /* fallback for old browsers */
+  background: #f1ee30;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #b5eb40, #f1ee30, #d4c92a);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #b5eb40, #f1ee30, #d4c92a);
+}
+
+/* ----- Carrot Text Background ----- */
+
+#CarrotTxt {
+  display: flex;
+  align-items: center;
+}
+
+/* Orange carrot body */
+.carrot-body {
+  background: #f28c28;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-radius: 25px;
+  position: relative;
+  font-size: 3vh;
+  font-weight: bold;
+
+  border: #8bca3d;
+  border-width: 8px;
+  border-style: solid;
+}
+
+/* Vertical carrot stripes */
+.carrot-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.15) 90%
+  );
+  background-size: 80px 100%;
+  pointer-events: none;
+  border-radius: 25px;
+  mix-blend-mode: multiply;
+}
+
+.carrot-body p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+/* ----- Donut Text Background ----- */
+
+#DonutTxt {
+  display: flex;
+  align-items: center;
+  background: #452402;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-radius: 25px;
+  position: relative;
+  font-size: 3vh;
+  font-weight: bold;
+
+  border: #b39a57;
+  border-width: 8px;
+  border-style: solid;
+
+  color: rgb(249, 51, 117);
+}
+
+.donutBody p {
+  display: inline;
+}
+
+.donutBody p span:nth-child(odd) {
+  color: #f28c28;
+}
+
+/* ----- Egg Text Background ----- */
+#EggTxt {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 3vw;
+  border-radius: 200vw;
+}
+
+.EggBg {
+  position: relative;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.EggBg::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* makes it fill the whole element */
+  background-color: #ffef14;
+  clip-path: circle(25% at 50% 50%);
+  z-index: 1;
+}
+
+.EggInfo {
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  padding: 3vw;
+}
+
+/* ----- Fries Background ----- */
+
+#FriesTxt {
+  display: flex;
+  align-items: center;
+}
+
+.friesBody {
+  min-height: 40vh;
+  background: #e8db2b;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+
+  position: relative;
+  font-size: 3vh;
+  font-weight: bold;
+
+  border-bottom: #d92e33;
+  border-bottom-width: 20vh;
+  border-bottom-style: solid;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.friesBody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #fff12f 0 20px,
+    #e0d20f 20px 40px
+  );
+  mix-blend-mode: multiply;
+}
+
+.friesBody p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+/* ----- Grapes Background ----- */
+
+#GrapesTxt {
+  display: flex;
+  align-items: center;
+}
+
+.grapesBody {
+  min-height: 40vh;
+  background: #67029a;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+
+  position: relative;
+  font-size: 3vh;
+  font-weight: bold;
+  border-radius: 10vw;
+
+  border: #bf00cd;
+  border-width: 10px;
+  border-style: dotted;
+}
+
+.grapesBody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: radial-gradient(circle, #bf00cd 20%, transparent 21%);
+  background-size: 30px 30px;
+  border-radius: 10vw;
+  mix-blend-mode: multiply;
+}
+
+.grapesBody p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #f6bbff;
+  padding: 2vw 2vh;
+}
+
+/* ----- Hotdog Background ----- */
+
+/* ----- Iceberg Lettuce Background ----- */
+
+/* ----- Jackfruit Background ----- */
+
+/* ----- Kiwi Background ----- */
+
+/* ----- Lemon Background ----- */
+
+/* ----- Milk Background ----- */
+
+/* ----- Nugget Background  ----- */
+
+/* ----- Onion Background ----- */
+
+/* ----- Potato Background ----- */
+
+/* ----- Quinoa Background ----- */
+
+/* ----- Raspberry Background  ----- */
+
+/* ----- Salmon Background ----- */
+
+/* ----- Tomato Background ----- */
+
+/* ----- Udon Background ----- */
+
+/* ----- Veal Background ----- */
+
+/* ----- Watermelon Background ----- */
+
+/* ----- XO Sauce Background ----- */
+
+/* ----- Yogurt Background ----- */
+
+/* ----- Zucchini Background ----- */
