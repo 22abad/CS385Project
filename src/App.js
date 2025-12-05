@@ -7,6 +7,8 @@ import BrowsePage from "./pages/BrowsePage";
 import OrderPage from "./pages/OrderPage";
 import AboutUs from "./pages/AboutUs";
 import AboutFoodWaste from "./pages/AboutFoodWaste";
+import LoginPage from "./pages/LoginPage"; // Import LoginPage
+import PrivateRoute from "./components/PrivateRoute"; // Import PrivateRoute
 
 import { Routes, Route } from "react-router-dom";
 
@@ -21,8 +23,17 @@ export default function App() {
         <Route path="/" element={<MainContent />} />
         {/*Navigation to Browse/Shopping Page*/}
         <Route path="/browse" element={<BrowsePage />} />
-        {/*Navigation to order screen*/}
-        <Route path="/order" element={<OrderPage />} />
+        {/* Login Page */}
+        <Route path="/login" element={<LoginPage />} />
+        {/*Navigation to order screen - Protected */}
+        <Route
+          path="/order"
+          element={
+            <PrivateRoute>
+              <OrderPage />
+            </PrivateRoute>
+          }
+        />
         {/*Navigation to About Us Page*/}
         <Route path="/about" element={<AboutUs />} />
         {/*Navigation to Food Wase info page*/}

@@ -2,8 +2,15 @@
 import React from "react";
 import stores from "./data"; // Import the mock data
 import "./styles.css";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 
 function Browse() {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  const handleReserveNow = () => {
+    navigate("/order"); // Navigate to the order page
+  };
+
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Save a Magic Bag nearby</h2>
@@ -43,7 +50,11 @@ function Browse() {
                 </div>
                 
                 {/* Action Button */}
-                <button className="btn btn-outline-success w-100 mt-3" disabled={store.itemsLeft === 0}>
+                <button
+                  className="btn btn-outline-success w-100 mt-3"
+                  disabled={store.itemsLeft === 0}
+                  onClick={handleReserveNow} // 添加 onClick 事件
+                >
                     {store.itemsLeft === 0 ? "Check back tomorrow" : "Reserve Now"}
                 </button>
               </div>
