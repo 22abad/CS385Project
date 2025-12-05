@@ -1,13 +1,7 @@
-/* --- General Styles --- */
-.bg {
-  background-image: url("https://www.publicdomainpictures.net/pictures/170000/velka/leaf-texture-1463652166QZu.jpg");
-  height: auto;
-  text-align: center;
-  width: 100vw;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  background-size: cover;
-  background-position: center;
+/* --- Body Style Override --- */
+body {
+  margin: 0;
+  padding-top: 56px;
 }
 
 /* --- Navbar Styles --- */
@@ -29,7 +23,7 @@
 /* --- Header Styles --- */
 #MainHeader {
   text-align: center;
-  font-size: 50px;
+  font-size: 7vw;
   padding-bottom: 5vh;
   color: #2c3e50;
   font-weight: bold;
@@ -39,17 +33,14 @@
 .main {
   padding-top: 5vh;
   padding-bottom: 10vh;
-}
-
-#Main {
   background-color: #deffdb;
 }
 
-/* --- Teammate's Circle Design Styles --- */
+/* --- Alyssa's Circle Design Styles --- */
 .Grocery-Text {
-  font-size: 18px;
+  font-size: 3.5vw;
   font-weight: bold;
-  padding: 10px;
+  padding: 4vw;
 }
 
 .center-image {
@@ -67,8 +58,8 @@
   background: #027020;
   border-radius: 50%; /* Standard circular border */
   color: white;
-  height: 175px;
-  width: 175px;
+  height: 30vw;
+  width: 30vw;
   display: flex; /* Flexbox for centering text */
   align-items: center;
   justify-content: center;
@@ -127,4 +118,42 @@
   font-size: 1.5rem;
   font-weight: bold;
   transform: rotate(-15deg);
+}
+
+/* --- Food Waste Page Background Image --- */
+.WasteTitleImage {
+  background-image: url(./content/FoodWaste.png);
+  background-repeat: no-repeat;
+  text-align: center;
+  width: 100vw;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.WasteTitle {
+  color: #e3ae1b;
+  background-color: #01280b;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+  border-radius: 20vw;
+  border: #e3ae1b;
+  border-style: solid;
+  border-width: 10;
+  text-align: center;
+}
+
+.mask {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 50vh;
+}
+
+img {
+  height: 20vh;
+}
+
+.row {
+  margin-bottom: 7vh;
 }
