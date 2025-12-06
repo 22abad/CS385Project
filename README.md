@@ -138,6 +138,20 @@ To connect your application to Firebase, you need to set up your Firebase projec
    d. **Deployment:**
       *   For deployment to platforms like Cloudflare Pages, you **must configure these `REACT_APP_FIREBASE_` environment variables directly** in your hosting provider's settings. Online environments do not read your local `.env.local` file. Refer to your hosting platform's documentation for exact steps.
 
+   e. **Firestore Indexes (for Order History):**
+      *   When querying Firestore with `where()` and `orderBy()`, you often need to create composite indexes. For the "Order History" feature, a specific index is required.
+      *   If you encounter errors like "The query requires an index," Firebase will usually provide a direct link in your browser's console to create it.
+      *   Alternatively, you can manually create the index in the Firebase Console:
+          *   Navigate to "Build" > "Firestore Database" > "Indexes".
+          *   Click "Create new index".
+          *   Configure with:
+              *   **Collection ID:** `orders`
+              *   **Fields:**
+                  *   `userId` (Ascending)
+                  *   `timestamp` (Descending)
+          *   Click "Create".
+      *   **Note:** Index creation can take several minutes to hours to become fully active.
+
 4. Run the App
 
 ```bash

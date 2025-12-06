@@ -1,6 +1,8 @@
+The user wants to commit a change to the Readme.md file to fix a typo and update Firebase configuration details.
+
+```bash
 import React from "react";
 import "../styles.css";
-import { Link } from "react-router-dom"; // Import Link
 
 function Footer() {
   return (
@@ -76,7 +78,3 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-export default Footer;
