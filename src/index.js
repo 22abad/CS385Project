@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min'; // Import Bootstrap JS
 import './styles.css'; // Corrected import to styles.css
 import App from './App';
 import { AuthProvider } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext'; // Import CartProvider
 import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,7 +13,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter> {/* Wrap with BrowserRouter */}
       <AuthProvider>
-        <App />
+        <CartProvider> {/* Wrap AuthProvider with CartProvider */}
+          <App />
+        </CartProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>

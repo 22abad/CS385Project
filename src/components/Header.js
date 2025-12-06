@@ -38,6 +38,13 @@ function Header() {
                   Order
                 </Link>
               </li>
+              {currentUser && ( // Conditionally render Order History link
+                <li className="nav-item">
+                  <Link to="/order-history" className="nav-link">
+                    Order History
+                  </Link>
+                </li>
+              )}
               <li className="nav-item">
                 <Link to="/AboutUs" className="nav-link">
                   About Us

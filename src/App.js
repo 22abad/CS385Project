@@ -12,6 +12,9 @@ import PrivateRoute from "./components/PrivateRoute"; // Import PrivateRoute
 import ContactPage from "./pages/ContactPage"; // Import ContactPage
 import HowItWorksPage from "./pages/HowItWorksPage"; // Import HowItWorksPage
 import ScrollToTop from "./components/ScrollToTop"; // Import ScrollToTop
+import CheckoutPage from "./pages/CheckoutPage"; // Import CheckoutPage
+import OrderConfirmationPage from "./pages/OrderConfirmationPage"; // Import OrderConfirmationPage
+import OrderHistoryPage from "./pages/OrderHistoryPage"; // Import OrderHistoryPage
 
 import { Routes, Route } from "react-router-dom";
 
@@ -38,6 +41,24 @@ export default function App() {
             </PrivateRoute>
           }
         />
+        {/*Navigation to Checkout Page - Protected */}
+        <Route
+          path="/checkout"
+          element={
+            <PrivateRoute>
+              <CheckoutPage />
+            </PrivateRoute>
+          }
+        />
+        {/*Navigation to Order History Page - Protected */}
+        <Route
+          path="/order-history"
+          element={
+            <PrivateRoute>
+              <OrderHistoryPage />
+            </PrivateRoute>
+          }
+        />
         {/*Navigation to About Us Page*/}
         <Route path="/about" element={<AboutUs />} />
         {/*Navigation to Food Wase info page*/}
@@ -46,6 +67,8 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
         {/*Navigation to How It Works Page*/}
         <Route path="/how-it-works" element={<HowItWorksPage />} />
+        {/*Navigation to Order Confirmation Page*/}
+        <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
       </Routes>
       <div id="Footer" className="container-fluid p-0">
         <Footer />

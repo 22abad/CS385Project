@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import AddDataButton from "../components/AddDataButton";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useCart } from "../contexts/CartContext"; // Import useCart
 
 export default function OrderPage() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [showCheckout, setShowCheckout] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
+  const { cart, addToCart } = useCart(); // Use cart from CartContext
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -30,45 +31,18 @@ export default function OrderPage() {
     fetchProducts();
   }, []);
 
-  const addToCart = (store) => {
-    setCart((prevCart) => {
-      const newCart = [...prevCart, store];
-      // Scroll to the 'Your Order' section after adding to cart
-      // Use setTimeout to ensure the DOM has updated before scrolling
-      setTimeout(() => {
-        const yourOrderSection = document.getElementById('your-order-section');
-        if (yourOrderSection) {
-          yourOrderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100); // Small delay to allow DOM to render
-      return newCart;
-    });
-  };
-
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + parseFloat(item.price.replace("€", "")), 0).toFixed(2);
   };
 
   const handlePlaceOrder = () => {
-    setShowCheckout(true);
-    setSubmitted(false);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setCart([]);
-    setShowCheckout(false);
+    // Instead of showing checkout form, navigate to checkout page
+    navigate("/checkout", { state: { cartItems: cart, totalAmount: calculateTotal() } });
   };
 
   return (
     <div className="container mt-5">
       <AddDataButton />
-      {submitted && (
-        <div className="alert alert-success" role="alert">
-          Your order has been placed successfully!
-        </div>
-      )}
       <div className="row">
         <div className="col-md-8">
           <h2>Order Menu</h2>
@@ -122,30 +96,6 @@ export default function OrderPage() {
           )}
         </div>
       </div>
-
-      {/* 4. Conditionally render the checkout form */}
-      {showCheckout && (
-        <div className="row mt-5">
-          <div className="col-md-8 offset-md-2">
-            <h2>Checkout</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">Full Name</label>
-                <input type="text" className="form-control" id="name" placeholder="John Doe" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="address" className="form-label">Address</label>
-                <input type="text" className="form-control" id="address" placeholder="1234 Main St" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="creditCard" className="form-label">Credit Card</label>
-                <input type="text" className="form-control" id="creditCard" placeholder="•••• •••• •••• ••••" />
-              </div>
-              <button type="submit" className="btn btn-primary">Confirm Order</button>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
