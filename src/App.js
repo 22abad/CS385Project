@@ -11,12 +11,14 @@ import LoginPage from "./pages/LoginPage"; // Import LoginPage
 import PrivateRoute from "./components/PrivateRoute"; // Import PrivateRoute
 import ContactPage from "./pages/ContactPage"; // Import ContactPage
 import HowItWorksPage from "./pages/HowItWorksPage"; // Import HowItWorksPage
+import ScrollToTop from "./components/ScrollToTop"; // Import ScrollToTop
 
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
     <>
+      <ScrollToTop /> {/* Render ScrollToTop component */}
       <div id="Header">
         <Header />
       </div>

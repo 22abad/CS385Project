@@ -31,7 +31,18 @@ export default function OrderPage() {
   }, []);
 
   const addToCart = (store) => {
-    setCart([...cart, store]);
+    setCart((prevCart) => {
+      const newCart = [...prevCart, store];
+      // Scroll to the 'Your Order' section after adding to cart
+      // Use setTimeout to ensure the DOM has updated before scrolling
+      setTimeout(() => {
+        const yourOrderSection = document.getElementById('your-order-section');
+        if (yourOrderSection) {
+          yourOrderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100); // Small delay to allow DOM to render
+      return newCart;
+    });
   };
 
   const calculateTotal = () => {
@@ -89,7 +100,7 @@ export default function OrderPage() {
           </div>
         </div>
         <div className="col-md-4">
-          <h2>Your Order</h2>
+          <h2 id="your-order-section">Your Order</h2>
           {cart.length === 0 ? (
             <p>Your cart is empty.</p>
           ) : (
