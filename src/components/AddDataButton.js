@@ -5,7 +5,7 @@ import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore"
 const AddDataButton = () => {
   const sampleNames = ["Green Grocer", "Corner Store", "The Food Market", "Daily Deli", "City Eats", "Farm Fresh"];
   const sampleCategories = ["Groceries", "Baked Goods", "Meals", "Dairy", "Produce"];
-  const foodImagesPool = [ // Renamed to avoid confusion with shuffled list
+  const foodImagesPool = [
     "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
     "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
     "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
@@ -15,10 +15,9 @@ const AddDataButton = () => {
   ];
 
   const [shuffledImages, setShuffledImages] = useState([]);
-  const imageIndex = useRef(0); // Using useRef to persist index across renders without triggering re-renders unnecessarily
+  const imageIndex = useRef(0);
 
   useEffect(() => {
-    // Initial shuffle of images when component mounts
     shuffleImages();
   }, []);
 
@@ -33,12 +32,11 @@ const AddDataButton = () => {
 
   const shuffleImages = () => {
     setShuffledImages(shuffleArray(foodImagesPool));
-    imageIndex.current = 0; // Reset index after shuffling
+    imageIndex.current = 0;
   };
 
   const getNextImage = () => {
     if (imageIndex.current >= shuffledImages.length) {
-      // If all images have been used, reshuffle
       shuffleImages();
     }
     const image = shuffledImages[imageIndex.current];
@@ -59,7 +57,7 @@ const AddDataButton = () => {
       originalPrice: `€${originalPrice}`,
       itemsLeft: Math.floor(Math.random() * 11),
       distance: `${(Math.random() * 5).toFixed(1)} km`,
-      image: getNextImage(), // Use the unique image getter
+      image: getNextImage(),
     };
   };
 
@@ -68,11 +66,11 @@ const AddDataButton = () => {
     try {
       const storesCollection = collection(db, "stores");
       const addPromises = [];
-      for (let i = 0; i < 5; i++) { // Loop 5 times to add 5 products
+      for (let i = 0; i < 5; i++) {
         const newProduct = generateRandomProduct();
         addPromises.push(addDoc(storesCollection, newProduct));
       }
-      await Promise.all(addPromises); // Wait for all 5 products to be added
+      await Promise.all(addPromises);
       alert("Successfully added 5 random products to your Firestore database!");
     } catch (error) {
       console.error("Error adding documents: ", error);
@@ -90,7 +88,7 @@ const AddDataButton = () => {
       const deletePromises = querySnapshot.docs.map(d => deleteDoc(doc(db, "stores", d.id)));
       await Promise.all(deletePromises);
       alert("Successfully deleted all products from your Firestore database!");
-      window.location.reload(); // Reload the page to reflect changes
+      window.location.reload();
     } catch (error) {
       console.error("Error deleting documents: ", error);
       alert("Error deleting products. Check the console for details.");

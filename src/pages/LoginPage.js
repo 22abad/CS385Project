@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext"; // Import useAuth hook
+import { useAuth } from "../contexts/AuthContext";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false); // No longer strictly needed for initial user creation, but good for login/register ops
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { login, signup, currentUser } = useAuth(); // Get login and signup from AuthContext
+  const { login, signup, currentUser } = useAuth();
 
-  // Redirect if already logged in
   useEffect(() => {
     if (currentUser) {
       navigate("/order");
@@ -51,7 +50,6 @@ export default function LoginPage() {
 
     try {
       await login(email, password);
-      // Redirection is handled by the useEffect based on currentUser
     } catch (err) {
       setError(getFriendlyErrorMessage(err.code));
     }
@@ -76,7 +74,6 @@ export default function LoginPage() {
 
     try {
       await signup(email, password);
-      // Redirection is handled by the useEffect based on currentUser
     } catch (err) {
       setError(getFriendlyErrorMessage(err.code));
     }

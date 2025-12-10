@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import AddDataButton from "../components/AddDataButton";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import { useCart } from "../contexts/CartContext"; // Import useCart
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
 
 export default function OrderPage() {
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate(); // Initialize useNavigate
-  const { cart, addToCart } = useCart(); // Use cart from CartContext
+  const navigate = useNavigate();
+  const { cart, addToCart } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -36,7 +36,6 @@ export default function OrderPage() {
   };
 
   const handlePlaceOrder = () => {
-    // Instead of showing checkout form, navigate to checkout page
     navigate("/checkout", { state: { cartItems: cart, totalAmount: calculateTotal() } });
   };
 
@@ -88,7 +87,6 @@ export default function OrderPage() {
                 ))}
               </ul>
               <h4>Total: €{calculateTotal()}</h4>
-              {/* 3. Add onClick handler to the button */}
               <button className="btn btn-success w-100" onClick={handlePlaceOrder}>
                 Place Order
               </button>

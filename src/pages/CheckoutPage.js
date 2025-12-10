@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { useCart } from "../contexts/CartContext"; // Import useCart
-import { db } from "../firebase"; // Import db
-import { collection, addDoc, serverTimestamp } from "firebase/firestore"; // Import Firestore functions
+import { useCart } from "../contexts/CartContext";
+import { db } from "../firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function CheckoutPage() {
   const [fullName, setFullName] = useState("");
@@ -13,18 +13,17 @@ export default function CheckoutPage() {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation(); // Get location object
+  const location = useLocation();
   const { currentUser } = useAuth();
-  const { clearCart } = useCart(); // Get clearCart from CartContext
+  const { clearCart } = useCart();
 
   const cartItems = location.state?.cartItems || [];
   const totalAmount = location.state?.totalAmount || "0.00";
 
   useEffect(() => {
-    // Redirect if cart is empty or no user logged in
     if (cartItems.length === 0 || !currentUser) {
       setError("No items in cart or not logged in. Redirecting...");
-      setTimeout(() => navigate("/order"), 2000); // Redirect back to order page
+      setTimeout(() => navigate("/order"), 2000);
     }
   }, [cartItems, currentUser, navigate]);
 
@@ -39,7 +38,6 @@ export default function CheckoutPage() {
       return;
     }
 
-    // Basic form validation
     if (!fullName || !address || !creditCard) {
       setError("All form fields are required.");
       setLoading(false);
@@ -47,26 +45,25 @@ export default function CheckoutPage() {
     }
 
     try {
-      // Save order to Firestore
       const orderRef = collection(db, "orders");
       await addDoc(orderRef, {
         userId: currentUser.uid,
-        userName: currentUser.email, // Or actual name if available
+        userName: currentUser.email,
         items: cartItems,
         totalAmount: totalAmount,
         deliveryDetails: {
           fullName,
           address,
         },
-        paymentMethod: "Credit Card", // Simplified for now
+        paymentMethod: "Credit Card",
         timestamp: serverTimestamp(),
-        status: "Pending", // Initial status
+        status: "Pending",
       });
 
       setSuccess(true);
-      clearCart(); // Clear cart after successful order
+      clearCart();
       setTimeout(() => {
-        navigate("/order-confirmation"); // Navigate to a confirmation page
+        navigate("/order-confirmation");
       }, 2000);
       
     } catch (err) {
@@ -87,7 +84,6 @@ export default function CheckoutPage() {
     );
   }
 
-  // Display cart details for user to review before confirming
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">

@@ -40,7 +40,6 @@ export default function AboutFoodWaste() {
       </div>
       <div className="main">
         <div className="container text-center">
-          {/* Apple */}
           <div className="row d-flex align-items-center">
             <div className="col-md-6 order-md-1">
               <p>"It is estimated that approximately 3.7 trillion apples end up in
@@ -50,7 +49,6 @@ export default function AboutFoodWaste() {
               <img src={Apple} alt="Apple" />
             </div>
           </div>
-          {/* Banana */}
           <div className="row d-flex align-items-center">
             <div className="col-md-6 order-md-2">
               <img src={Banana} alt="Banana" />
@@ -63,7 +61,6 @@ export default function AboutFoodWaste() {
               million households" (Shales).</p>
             </div>
           </div>
-          {/* Carrot */}
           <div className="row d-flex align-items-center">
             <div className="col-md-6 order-md-1">
               <p>"Results from a total of 4,740 interviews suggested that fresh
