@@ -208,7 +208,7 @@ export default function AboutFoodWaste() {
           </div>
           <div class="row">
             <div class="col">
-              <img src={IcebergLettuce} />
+              <img src={IcebergLettuce} id="lettuceImg" />
             </div>
             <div class="col" id="LettuceTxt">
               <div class="lettuceBody">
@@ -234,7 +234,7 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={Jackfruit} />
+              <img src={Jackfruit} id="jackfruitImg" />
             </div>
           </div>
           <div class="row">
@@ -266,12 +266,12 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={Lemon} />
+              <img src={Lemon} id="lemonImg" />
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <img src={Milk} />
+              <img src={Milk} id="milkImg" />
             </div>
             <div class="col" id="MilkTxt">
               <div class="milkBody">
@@ -297,7 +297,7 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={Nuggets} />
+              <img src={Nuggets} id="nuggetImg" />
             </div>
           </div>
           <div class="row">
@@ -331,12 +331,12 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={Potato} />
+              <img src={Potato} id="potatoImg" />
             </div>
           </div>
           <div class="row">
             <div class="col" id="QuinoaTxt">
-              <img src={Quinoa} />
+              <img src={Quinoa} id="quinoaImg" />
             </div>
             <div class="col">
               <div class="quinoaBody">
@@ -358,12 +358,12 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={Raspberry} />
+              <img src={Raspberry} id="raspberryImg" />
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <img src={Salmon} />
+              <img src={Salmon} id="salmonImg" />
             </div>
             <div class="col" id="SalmonTxt">
               <div class="salmonBody">
@@ -387,12 +387,12 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={Tomato} />
+              <img src={Tomato} id="tomatoImg" />
             </div>
           </div>
           <div class="row">
             <div class="col" id="Udon">
-              <img src={Udon} />
+              <img src={Udon} id="udonImg" />
             </div>
             <div class="col" id="UdonTxt">
               <div class="udonBody">
@@ -414,12 +414,12 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={Veal} />
+              <img src={Veal} id="vealImg" />
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <img src={Watermelon} />
+              <img src={Watermelon} id="watermelonImg" />
             </div>
             <div class="col" id="WatermelonTxt">
               <div class="watermelonBody">
@@ -444,12 +444,12 @@ export default function AboutFoodWaste() {
               </div>
             </div>
             <div class="col">
-              <img src={XOSauce} />
+              <img src={XOSauce} id="xoImg" />
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <img src={Yogurt} />
+              <img src={Yogurt} id="yogurtImg" />
             </div>
             <div class="col" id="YogurtTxt">
               <div class="yogurtBody">
@@ -470,7 +470,7 @@ export default function AboutFoodWaste() {
               million people" (Robinson).
             </div>
             <div class="col">
-              <img src={Zuchini} />
+              <img src={Zuchini} id="zucchiniImg" />
             </div>
           </div>
         </div>

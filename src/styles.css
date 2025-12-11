@@ -182,6 +182,10 @@ img {
   align-content: center;
 }
 
+.row {
+  margin-bottom: 15vh;
+}
+
 /* ----- Apple Text Background ----- */
 
 #AppleTxt {
@@ -1601,4 +1605,86 @@ img {
 
   padding-left: 4vw;
   padding-right: 4vw;
+}
+
+/* ------------ Section for sizing up the smaller images ----------------- */
+#lettuceImg {
+  transform: scale(1.5); /* 50% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#jackfruitImg {
+  transform: scale(1.8); /* 80% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#lemonImg {
+  transform: scale(1.6); /* 60% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#milkImg {
+  transform: scale(1.9); /* 90% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#nuggetImg {
+  transform: scale(2.3); /* 130% bigger */
+  transform-origin: bottom; /* keeps it centered */
+}
+
+#potatoImg {
+  transform: scale(1.5); /* 50% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#quinoaImg {
+  transform: scale(1.4); /* 40% bigger */
+  transform-origin: center; /* keeps it centered */
+  margin-top: 4vh;
+}
+
+#raspberryImg {
+  transform: scale(1.4); /* 40% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#salmonImg {
+  transform: scale(1.4); /* 40% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#tomatoImg {
+  transform: scale(1.2); /* 20% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#udonImg {
+  transform: scale(2.5); /* 150% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#vealImg {
+  transform: scale(1.5); /* 50% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#watermelonImg {
+  transform: scale(1.4); /* 40% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#xoImg {
+  transform: scale(1.7); /* 70% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#yogurtImg {
+  transform: scale(1.2); /* 20% bigger */
+  transform-origin: center; /* keeps it centered */
+}
+
+#zucchiniImg {
+  transform: scale(1.2); /* 20% bigger */
+  transform-origin: center; /* keeps it centered */
 }
