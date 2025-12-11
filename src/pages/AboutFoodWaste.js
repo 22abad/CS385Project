@@ -42,6 +42,21 @@ const AlternatingColorText = ({ text }) => {
   );
 };
 
+//Alternating color function for displaying yogurt toppings
+const AlternatingColorText2 = ({ text }) => {
+  const words = text.split(" ");
+
+  return (
+    <p>
+      {words.map((word, i) => (
+        <span key={i} style={{ color: i % 2 === 0 ? "#c64d6a" : "inherit" }}>
+          {word + " "}
+        </span>
+      ))}
+    </p>
+  );
+};
+
 export default function AboutFoodWaste() {
   return (
     <>
@@ -176,11 +191,16 @@ export default function AboutFoodWaste() {
           </div>
           <div class="row">
             <div class="col" id="HotdogTxt">
-              "It is estimated that as much as 23% of production in the meat
-              sector is lost and wasted. The largest share is generated at the
-              consumption level, representing 64% of the total food waste,
-              followed by manufacturing (20%), distribution (12%) and primary
-              production and post-harvest (3.5%)" (Karwowska et al.).
+              <div class="hotdogBody">
+                <p>
+                  "It is estimated that as much as 23% of production in the meat
+                  sector is lost and wasted. The largest share is generated at
+                  the consumption level, representing 64% of the total food
+                  waste, followed by manufacturing (20%), distribution (12%) and
+                  primary production and post-harvest (3.5%)" (Karwowska et
+                  al.).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Hotdog} />
@@ -191,19 +211,27 @@ export default function AboutFoodWaste() {
               <img src={IcebergLettuce} />
             </div>
             <div class="col" id="LettuceTxt">
-              "Data indicate that up to 41% of salad is wasted during typical
-              fresh-cut iceberg salad processing because of the removal of the
-              external leaves and core, accounting for nearly all the total
-              waste production" (Pinotti et al.).
+              <div class="lettuceBody">
+                <p>
+                  "Data indicate that up to 41% of salad is wasted during
+                  typical fresh-cut iceberg salad processing because of the
+                  removal of the external leaves and core, accounting for nearly
+                  all the total waste production" (Pinotti et al.).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="JackfruitTxt">
-              " The importance of jackfruit is still that even with the volumes
-              of this crop that are produced, it is estimated every year that
-              one-third of the crop is being wasted due to improper post-harvest
-              management, absence of infrastructure and post-processing
-              infrastructure" (Shyamsunder et al.).
+              <div class="jackfruitBody">
+                <p>
+                  "The importance of jackfruit is still that even with the
+                  volumes of this crop that are produced, it is estimated every
+                  year that one-third of the crop is being wasted due to
+                  improper post-harvest management, absence of infrastructure
+                  and post-processing infrastructure" (Shyamsunder et al.).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Jackfruit} />
@@ -214,20 +242,28 @@ export default function AboutFoodWaste() {
               <img src={Kiwi} />
             </div>
             <div class="col" id="KiwiTxt">
-              For Kiwis, "This mechanical damage can result in bruising and
-              severely reduce marketability by altering the fruit’s physical and
-              chemical properties. Research indicates that mechanical damage can
-              lead to substantial postharvest losses ranging from 30% ~ 50%" (He
-              et al.).
+              <div class="kiwiBody">
+                <p>
+                  For Kiwis, "This mechanical damage can result in bruising and
+                  severely reduce marketability by altering the fruit’s physical
+                  and chemical properties. Research indicates that mechanical
+                  damage can lead to substantial postharvest losses ranging from
+                  30% ~ 50%" (He et al.).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="LemonTxt">
-              "According to the latest estimates provided by the Spanish
-              agricultural union COAG, in the 2023-2024 season, around 400,000
-              tons of lemons cannot be sold and will go to waste — about 27% of
-              the planned production. Losses from this massive waste are
-              estimated at €120 million ($129 million)" (Álvarez).
+              <div class="lemonBody">
+                <p>
+                  "According to the latest estimates provided by the Spanish
+                  agricultural union COAG, in the 2023-2024 season, around
+                  400,000 tons of lemons cannot be sold and will go to waste —
+                  about 27% of the planned production. Losses from this massive
+                  waste are estimated at €120 million ($129 million)" (Álvarez).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Lemon} />
@@ -238,20 +274,27 @@ export default function AboutFoodWaste() {
               <img src={Milk} />
             </div>
             <div class="col" id="MilkTxt">
-              "330,000 tonnes of milk waste each year were identified. From
-              processing to our homes...90% of this milk waste occurs in the
-              home equating to 490 million pints of milk" (“Opportunities to
-              Reduce Waste along the Journey of Milk, from Dairy to Home”).
+              <div class="milkBody">
+                <p>
+                  "330,000 tonnes of milk waste each year were identified. From
+                  processing to our homes...90% of this milk waste occurs in the
+                  home equating to 490 million pints of milk" (“Opportunities to
+                  Reduce Waste along the Journey of Milk, from Dairy to Home”).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="NuggetTxt">
-              "Kahiki Foods, a family-run Asian foods manufacturer with about
-              200 employees in Gahanna, Ohio, USA, had an excessive amount of
-              waste on their chicken nugget product line; their average daily
-              waste was 9.72 percent...The daily amount of waste on the line
-              averaged 4,976 pounds (for two production lines running two
-              shifts)" (Kinneberg).
+              <div class="nuggetBody">
+                <p>
+                  "Kahiki Foods...had an excessive amount of waste on their
+                  chicken nugget product line; their average daily waste was
+                  9.72 percent...The daily amount of waste on the line averaged
+                  4,976 pounds (for two production lines running two shifts)"
+                  (Kinneberg).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Nuggets} />
@@ -262,21 +305,30 @@ export default function AboutFoodWaste() {
               <img src={Onion} />
             </div>
             <div class="col" id="OnionTxt">
-              "The total postharvest loss of onion at the farmer, wholesale,
-              retail, and consumer level was found to be 29.775%, of which the
-              higher proportion of losses (35.5%) was observed at the farmer's
-              level"(Yeshiwas et al.).
+              <div class="onionBody">
+                <p>
+                  "The total postharvest loss of onion at the farmer, wholesale,
+                  retail, and consumer level was found to be 29.775%, of which
+                  the higher proportion of losses (35.5%) was observed at the
+                  farmer's level"(Yeshiwas et al.).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="PotatoTxt">
-              "41–46% of all processing potatoes and 53–56% of all table
-              potatoes are not eaten by consumers... Over 50% of all losses are
-              due to quality defects in the potatoes. Around one-third of all
-              potatoes with quality defects are rejected owing to their
-              potential harmfulness to human health, whilst two-thirds of these
-              potatoes are rejected because they fail to meet the freshness and
-              quality criteria of trading partners and consumers" (Zaugg).
+              <div class="potatoBody">
+                <p>
+                  "41–46% of all processing potatoes and 53–56% of all table
+                  potatoes are not eaten by consumers... Over 50% of all losses
+                  are due to quality defects in the potatoes. Around one-third
+                  of all potatoes with quality defects are rejected owing to
+                  their potential harmfulness to human health, whilst two-thirds
+                  of these potatoes are rejected because they fail to meet the
+                  freshness and quality criteria of trading partners and
+                  consumers" (Zaugg).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Potato} />
@@ -287,15 +339,23 @@ export default function AboutFoodWaste() {
               <img src={Quinoa} />
             </div>
             <div class="col">
-              Households generate 60% of all food waste—equivalent to 631
-              million tonnes in 2022. Food services contribute 290 million
-              tonnes and retail 131 million (UNEP, 2024).
+              <div class="quinoaBody">
+                <p>
+                  Households generate 60% of all food waste—equivalent to 631
+                  million tonnes in 2022. Food services contribute 290 million
+                  tonnes and retail 131 million (UNEP, 2024).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="RaspberryTxt">
-              "Raspberries can lose up to 60% of shelf life if bruised or
-              harvested overripe" (Perkins-Veazie & Collins, 2002).
+              <div class="raspberryBody">
+                <p>
+                  "Raspberries can lose up to 60% of shelf life if bruised or
+                  harvested overripe" (Perkins-Veazie & Collins, 2002).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Raspberry} />
@@ -306,17 +366,25 @@ export default function AboutFoodWaste() {
               <img src={Salmon} />
             </div>
             <div class="col" id="SalmonTxt">
-              "In 2021, approximately 23.8 million tonnes of aquatic foods were
-              lost or wasted, representing 14.8% of global production"
-              (“Investigating Global Aquatic Food Loss and Waste”).
+              <div class="salmonBody">
+                <p>
+                  "In 2021, approximately 23.8 million tonnes of aquatic foods
+                  were lost or wasted, representing 14.8% of global production"
+                  (“Investigating Global Aquatic Food Loss and Waste”).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="TomatoTxt">
-              "Only 41% of produced tomatoes are actually consumed, with waste
-              occurring at various stages: 23.5% during harvest, 35% in
-              post-harvest processes, 3.9% at retail, and 20.2% in households"
-              (Bath et al.).
+              <div class="tomatoBody">
+                <p>
+                  "Only 41% of produced tomatoes are actually consumed, with
+                  waste occurring at various stages: 23.5% during harvest, 35%
+                  in post-harvest processes, 3.9% at retail, and 20.2% in
+                  households" (Bath et al.).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Tomato} />
@@ -327,15 +395,23 @@ export default function AboutFoodWaste() {
               <img src={Udon} />
             </div>
             <div class="col" id="UdonTxt">
-              "Rotting food in landfills contributes up to 14% of global methane
-              emissions, a greenhouse gas over 80 times more potent than CO₂
-              over 20 years" (calculated through US EPA, 2025).
+              <div class="udonBody">
+                <p>
+                  "Rotting food in landfills contributes up to 14% of global
+                  methane emissions, a greenhouse gas over 80 times more potent
+                  than CO₂ over 20 years" (calculated through US EPA, 2025).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="VealTxt">
-              "The average person wastes 79 kg of food each year—equivalent to
-              at least 1 billion meals wasted every day" (UNEP).
+              <div class="vealBody">
+                <p>
+                  "The average person wastes 79 kg of food each year—equivalent
+                  to at least 1 billion meals wasted every day" (UNEP).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={Veal} />
@@ -346,17 +422,26 @@ export default function AboutFoodWaste() {
               <img src={Watermelon} />
             </div>
             <div class="col" id="WatermelonTxt">
-              "100% of a watermelon is edible, including the seeds and the rind.
-              This means watermelon is a zero food waste food. The green skin is
-              even edible but certainly it needs to be cooked" (“Facts & FAQs”).
+              <div class="watermelonBody">
+                <p>
+                  "100% of a watermelon is edible, including the seeds and the
+                  rind. This means watermelon is a zero food waste food. The
+                  green skin is even edible but certainly it needs to be cooked"
+                  (“Facts & FAQs”).
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col" id="XOTxt">
-              "The UK wastes approximately 9.52 million tonnes of food every
-              year.This total is enough to feed upwards of 30 million people a
-              year, yet 8.4 million live in food poverty in the UK" (Waste
-              Managed).
+              <div class="xoBody">
+                <p>
+                  "The UK wastes approximately 9.52 million tonnes of food every
+                  year. This total is enough to feed upwards of 30 million
+                  people a year, yet 8.4 million live in food poverty in the UK"
+                  (Waste Managed).
+                </p>
+              </div>
             </div>
             <div class="col">
               <img src={XOSauce} />
@@ -367,9 +452,15 @@ export default function AboutFoodWaste() {
               <img src={Yogurt} />
             </div>
             <div class="col" id="YogurtTxt">
-              "Today, around 9% of yogurt is wasted by consumers at home
-              according to Label better, less waste | WRAP UK" (“Why Choose
-              between More Taste and Less Waste in Yogurts?”).
+              <div class="yogurtBody">
+                <p>
+                  <AlternatingColorText2
+                    text={`Today, around 9% of yogurt is wasted by consumers at home
+                  according to Label better, less waste | WRAP UK" (“Why Choose
+                  between More Taste and Less Waste in Yogurts?”).`}
+                  />
+                </p>
+              </div>
             </div>
           </div>
           <div class="row">
