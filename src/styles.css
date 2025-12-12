@@ -186,6 +186,11 @@ img {
   margin-bottom: 15vh;
 }
 
+/*---Formatting for fruit displays */
+.fruit-col {
+  margin-bottom: "10vw";
+}
+
 /* ----- Apple Text Background ----- */
 
 #AppleTxt {
@@ -195,6 +200,9 @@ img {
   border-width: 5px;
   border-style: solid;
   border-radius: 100vw;
+
+  padding-top: 8vh;
+  padding-bottom: 8vh;
 
   /* fallback for old browsers */
   background: #d92e33;
@@ -343,7 +351,7 @@ img {
   font-weight: bold;
   position: relative;
   z-index: 2;
-  padding: 3vw;
+  padding: 7vw;
 }
 
 /* ----- Fries Background ----- */
@@ -648,7 +656,7 @@ img {
   position: relative;
   z-index: 2;
   margin: 0;
-  padding-top: 7vh;
+  padding-top: 9vh;
   padding-bottom: 9vh;
   padding-left: 7vw;
   padding-right: 7vw;
@@ -670,6 +678,8 @@ img {
   text-align: center;
   justify-content: center;
   align-content: center;
+
+  max-width: 100%;
 }
 
 .kiwiBody {
@@ -1608,24 +1618,18 @@ img {
 }
 
 /* ------------ Section for sizing up the smaller images ----------------- */
-#lettuceImg {
-  transform: scale(1.5); /* 50% bigger */
-  transform-origin: center; /* keeps it centered */
-}
 
 #jackfruitImg {
-  transform: scale(1.8); /* 80% bigger */
+  transform: scale(1.3); /* 30% bigger */
   transform-origin: center; /* keeps it centered */
 }
 
 #lemonImg {
-  transform: scale(1.6); /* 60% bigger */
-  transform-origin: center; /* keeps it centered */
+  height: 50vh;
 }
 
 #milkImg {
-  transform: scale(1.9); /* 90% bigger */
-  transform-origin: center; /* keeps it centered */
+  height: 50vh;
 }
 
 #nuggetImg {
@@ -1645,13 +1649,11 @@ img {
 }
 
 #raspberryImg {
-  transform: scale(1.4); /* 40% bigger */
-  transform-origin: center; /* keeps it centered */
+  height: 40vh;
 }
 
 #salmonImg {
-  transform: scale(1.4); /* 40% bigger */
-  transform-origin: center; /* keeps it centered */
+  height: 40vh;
 }
 
 #tomatoImg {
