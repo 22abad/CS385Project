@@ -88,33 +88,39 @@ export default function AboutFoodWaste() {
 
         <h1 id="MainHeader">Food Waste Fun Facts</h1>
 
-        <div class="container text-center FoodFact">
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Apple} />
+        <div className="container-fluid text-center FoodFact">
+          <div className="row align-items-center fact-row">
+            <div className="col-12 col-md-6 order-1 order-md-1 d-flex justify-content-center">
+              <img src={Apple} className="img-fluid food-img" alt="Apple" />
             </div>
-            <div class="col fruit-col" id="AppleTxt">
+            <div
+              className="col-12 col-md-6 order-2 order-md-2 no-cut"
+              id="AppleTxt"
+            >
               "It is estimated that approximately 3.7 trillion apples end up in
               landfills each year" (Matei et al.).
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="BananaTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="BananaTxt"
+            >
               "A new study by Aldi has revealed that bananas are the most
               commonly discarded fresh food in the UK, with Brits wasting an
               astonishing 3.2 billion bananas every year. This equates to an
               average of 115 bananas per household annually across the UK’s 28.4
               million households" (Shales).
             </div>
-            <div class="col fruit-col">
-              <img src={Banana} />
+            <div className="col-12 col-md-6">
+              <img src={Banana} className="img-fluid food-img" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Carrot} />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img src={Carrot} className="img-fluid food-img" />
             </div>
-            <div class="col fruit-col" id="CarrotTxt">
+            <div className="col-md-6 no-cut" id="CarrotTxt">
               <div class="carrot-body">
                 <p>
                   "Results from a total of 4,740 interviews suggested that fresh
@@ -126,23 +132,26 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="DonutTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="DonutTxt"
+            >
               <div class="donutBody">
                 <AlternatingColorText
                   text={`Krispy Kreme, Inc., specifically its UK team, partnered with the food waste saving app ... to notify consumers about end-of-day donuts that are available for purchase at a discount, leading to nearly 275,000 donuts being sold and saving 113.7 tonnes of CO2e, which is equal to 128 flights from London to New York (Sosland).`}
                 />
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Donut} />
+            <div className="col-12 col-md-6">
+              <img src={Donut} className="img-fluid food-img" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Egg} />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img src={Egg} className="img-fluid food-img" />
             </div>
-            <div class="col fruit-col" id="EggTxt">
+            <div className="col-md-6 no-cut" id="EggTxt">
               <div class="EggBg">
                 <div class="EggInfo">
                   <p>
@@ -158,8 +167,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="FriesTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="FriesTxt"
+            >
               <div class="friesBody">
                 <p>
                   "In 2022, 1.05 billion tonnes of food were wasted—19% of food
@@ -168,15 +180,15 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Fries} />
+            <div className="col-md-6">
+              <img src={Fries} className="img-fluid food-img" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Grapes} />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img src={Grapes} className="img-fluid food-img" />
             </div>
-            <div class="col fruit-col" id="grapesTxt">
+            <div className="col-md-6 no-cut" id="grapesTxt">
               <div class="grapesBody">
                 <p>
                   For grapes, "Mean on-farm losses immediately after harvest was
@@ -189,8 +201,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="HotdogTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="HotdogTxt"
+            >
               <div class="hotdogBody">
                 <p>
                   "It is estimated that as much as 23% of production in the meat
@@ -202,15 +217,19 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Hotdog} />
+            <div className="col-md-6">
+              <img src={Hotdog} className="img-fluid food-img" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={IcebergLettuce} id="lettuceImg" />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img
+                src={IcebergLettuce}
+                className="img-fluid food-img"
+                id="lettuceImg"
+              />
             </div>
-            <div class="col fruit-col" id="LettuceTxt">
+            <div className="col-md-6 no-cut" id="LettuceTxt">
               <div class="lettuceBody">
                 <p>
                   "Data indicate that up to 41% of salad is wasted during
@@ -221,8 +240,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="JackfruitTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="JackfruitTxt"
+            >
               <div class="jackfruitBody">
                 <p>
                   "The importance of jackfruit is still that even with the
@@ -233,15 +255,19 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Jackfruit} id="jackfruitImg" />
+            <div className="col-md-6">
+              <img
+                src={Jackfruit}
+                className="img-fluid food-img"
+                id="jackfruitImg"
+              />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col col-12 col-md-4">
-              <img src={Kiwi} />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img src={Kiwi} className="img-fluid food-img" />
             </div>
-            <div class="col-12 col-md-8 fruit-col" id="KiwiTxt">
+            <div className="col-md-6 no-cut" id="KiwiTxt">
               <div class="kiwiBody">
                 <p>
                   For Kiwis, "This mechanical damage can result in bruising and
@@ -253,8 +279,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="LemonTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="LemonTxt"
+            >
               <div class="lemonBody">
                 <p>
                   "According to the latest estimates provided by the Spanish
@@ -265,15 +294,15 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Lemon} id="lemonImg" />
+            <div className="col-md-6">
+              <img src={Lemon} className="img-fluid food-img" id="lemonImg" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Milk} id="milkImg" />
+          <div className="row align-items-center fact-row">
+            <div className="col-12 col-md-6">
+              <img src={Milk} className="img-fluid food-img" id="milkImg" />
             </div>
-            <div class="col fruit-col" id="MilkTxt">
+            <div className="col-12 col-md-6 no-cut" id="MilkTxt">
               <div class="milkBody">
                 <p>
                   "330,000 tonnes of milk waste each year were identified. From
@@ -284,8 +313,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="NuggetTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="NuggetTxt"
+            >
               <div class="nuggetBody">
                 <p>
                   "Kahiki Foods...had an excessive amount of waste on their
@@ -296,15 +328,19 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Nuggets} id="nuggetImg" />
+            <div className="col-md-6">
+              <img
+                src={Nuggets}
+                className="img-fluid food-img"
+                id="nuggetImg"
+              />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Onion} />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img src={Onion} className="img-fluid food-img" />
             </div>
-            <div class="col fruit-col" id="OnionTxt">
+            <div className="col-md-6 no-cut" id="OnionTxt">
               <div class="onionBody">
                 <p>
                   "The total postharvest loss of onion at the farmer, wholesale,
@@ -315,8 +351,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="PotatoTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="PotatoTxt"
+            >
               <div class="potatoBody">
                 <p>
                   "41–46% of all processing potatoes and 53–56% of all table
@@ -330,15 +369,15 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Potato} id="potatoImg" />
+            <div className="col-md-6">
+              <img src={Potato} className="img-fluid food-img" id="potatoImg" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="QuinoaTxt">
-              <img src={Quinoa} id="quinoaImg" />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6 no-cut" id="QuinoaTxt">
+              <img src={Quinoa} className="img-fluid food-img" id="quinoaImg" />
             </div>
-            <div class="col fruit-col">
+            <div className="col-md-6">
               <div class="quinoaBody">
                 <p>
                   Households generate 60% of all food waste—equivalent to 631
@@ -348,8 +387,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="RaspberryTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="RaspberryTxt"
+            >
               <div class="raspberryBody">
                 <p>
                   "Raspberries can lose up to 60% of shelf life if bruised or
@@ -357,15 +399,19 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Raspberry} id="raspberryImg" />
+            <div className="col-md-6">
+              <img
+                src={Raspberry}
+                className="img-fluid food-img"
+                id="raspberryImg"
+              />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Salmon} id="salmonImg" />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img src={Salmon} className="img-fluid food-img" id="salmonImg" />
             </div>
-            <div class="col fruit-col" id="SalmonTxt">
+            <div className="col-md-6 no-cut" id="SalmonTxt">
               <div class="salmonBody">
                 <p>
                   "In 2021, approximately 23.8 million tonnes of aquatic foods
@@ -375,8 +421,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="TomatoTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="TomatoTxt"
+            >
               <div class="tomatoBody">
                 <p>
                   "Only 41% of produced tomatoes are actually consumed, with
@@ -386,15 +435,15 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Tomato} id="tomatoImg" />
+            <div className="col-md-6">
+              <img src={Tomato} className="img-fluid food-img" id="tomatoImg" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="Udon">
-              <img src={Udon} id="udonImg" />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6" id="Udon">
+              <img src={Udon} className="img-fluid food-img" id="udonImg" />
             </div>
-            <div class="col fruit-col" id="UdonTxt">
+            <div className="col-md-6 no-cut" id="UdonTxt">
               <div class="udonBody">
                 <p>
                   "Rotting food in landfills contributes up to 14% of global
@@ -404,8 +453,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="VealTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="VealTxt"
+            >
               <div class="vealBody">
                 <p>
                   "The average person wastes 79 kg of food each year—equivalent
@@ -413,15 +465,19 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={Veal} id="vealImg" />
+            <div className="col-md-6">
+              <img src={Veal} className="img-fluid food-img" id="vealImg" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Watermelon} id="watermelonImg" />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img
+                src={Watermelon}
+                className="img-fluid food-img"
+                id="watermelonImg"
+              />
             </div>
-            <div class="col fruit-col" id="WatermelonTxt">
+            <div className="col-md-6 no-cut" id="WatermelonTxt">
               <div class="watermelonBody">
                 <p>
                   "100% of a watermelon is edible, including the seeds and the
@@ -432,8 +488,11 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="XOTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="XOTxt"
+            >
               <div class="xoBody">
                 <p>
                   "The UK wastes approximately 9.52 million tonnes of food every
@@ -443,15 +502,15 @@ export default function AboutFoodWaste() {
                 </p>
               </div>
             </div>
-            <div class="col fruit-col">
-              <img src={XOSauce} id="xoImg" />
+            <div className="col-md-6">
+              <img src={XOSauce} className="img-fluid food-img" id="xoImg" />
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col">
-              <img src={Yogurt} id="yogurtImg" />
+          <div className="row align-items-center fact-row">
+            <div className="col-md-6">
+              <img src={Yogurt} className="img-fluid food-img" id="yogurtImg" />
             </div>
-            <div class="col fruit-col" id="YogurtTxt">
+            <div className="col-md-6 no-cut" id="YogurtTxt">
               <div class="yogurtBody">
                 <p>
                   <AlternatingColorText2
@@ -463,14 +522,21 @@ export default function AboutFoodWaste() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col fruit-col" id="ZuchinniTxt">
+          <div className="row align-items-center fact-row flex-md-row-reverse">
+            <div
+              className="col-12 col-md-6 order-1 order-md-1 no-cut"
+              id="ZuchinniTxt"
+            >
               "The food currently wasted in Europe could feed 200 million
               people, in Latin America 300 million people, and in Africa 300
               million people" (Robinson).
             </div>
-            <div class="col fruit-col">
-              <img src={Zuchini} id="zucchiniImg" />
+            <div className="col-md-6">
+              <img
+                src={Zuchini}
+                className="img-fluid food-img"
+                id="zucchiniImg"
+              />
             </div>
           </div>
         </div>

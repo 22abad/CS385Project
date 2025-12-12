@@ -120,7 +120,7 @@ body {
   transform: rotate(-15deg);
 }
 
-/* --- Food Waste Page Background Image --- */
+/* --- Food Waste Page Header Background Image and Text --- */
 .WasteTitleImage {
   background-image: url(./content/FoodWaste.png);
   background-repeat: no-repeat;
@@ -150,13 +150,7 @@ body {
   height: 50vh;
 }
 
-img {
-  height: 30vh;
-}
-
-.row {
-  margin-bottom: 7vh;
-}
+/* -------------- Food Waste Facts Definition -----------------*/
 
 .FoodWasteDefinition {
   text-align: center;
@@ -169,6 +163,8 @@ img {
   font-size: 20px;
 }
 
+/* -------------- Food Waste Facts Rows and Columns -----------------*/
+
 .FoodFacts {
   padding-top: 10vh;
   text-align: center;
@@ -176,19 +172,49 @@ img {
   align-content: center;
 }
 
-.col {
-  text-align: center;
-  justify-content: center;
-  align-content: center;
+/* Ensure Bootstrap rows keep their flex behavior and wrap */
+.row {
+  display: flex; /* should match Bootstrap, but enforce it in case of overrides */
+  flex-wrap: wrap; /* important so columns stack on small screens */
+  align-items: center;
 }
 
-.row {
-  margin-bottom: 15vh;
+/* Food images: keep them centered and constrained */
+.food-img {
+  width: 75%;
+  max-height: 50vh;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ensure text never overflows */
+.no-cut {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
+}
+
+/* Row spacing */
+.fact-row {
+  padding: 1.5rem 0;
+}
+
+/* Make columns stack nicely on mobile */
+@media (max-width: 768px) {
+  .fact-row {
+    text-align: center;
+  }
+  .fact-row img {
+    margin-bottom: 15px;
+  }
 }
 
 /*---Formatting for fruit displays */
 .fruit-col {
-  margin-bottom: "10vw";
+  margin-bottom: 10vw;
 }
 
 /* ----- Apple Text Background ----- */
@@ -788,12 +814,10 @@ img {
   justify-content: center;
   align-content: center;
 
-  width: 60vw;
-  height: 85vh;
+  height: 80vh;
+  aspect-ratio: auto; /* no forced square */
+  padding: 2vw; /* optional, add spacing */
 
-  width: 100%;
-
-  aspect-ratio: 1;
   /* Milk Spill Shape */
   clip-path: shape(
     from 19.41% 28.61%,
@@ -838,14 +862,17 @@ img {
 }
 
 .milkBody {
-  width: 100%;
-  height: 100%;
+  width: 90%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  padding: 1rem; /* adds space inside box */
+  overflow: visible; /* lets text expand naturally */
+  max-height: none; /* remove any unintended height restriction */
 
   background: #ffffff;
   padding: 2vw;
@@ -865,9 +892,12 @@ img {
 
   margin-left: 8vw;
   margin-right: 8vw;
-  padding: 1vw 2vw;
 
   font-weight: bold;
+  font-size: 2.7vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+
   border-radius: 2vw;
 
   max-width: 90%;
@@ -882,9 +912,6 @@ img {
   text-align: center;
   justify-content: center;
   align-content: center;
-
-  max-width: 50vw;
-  height: 87vh;
 
   aspect-ratio: 1;
   clip-path: shape(
@@ -1479,13 +1506,11 @@ img {
   justify-content: center;
   align-content: center;
 
-  max-width: 50vw;
-  height: 85vh;
+  height: 80vh;
+  aspect-ratio: auto; /* no forced square */
+  padding: 2vw; /* optional, add spacing */
 
-  width: 100%;
-
-  aspect-ratio: 1;
-  /* Milk Spill Shape */
+  /* sauce Spill Shape */
   clip-path: shape(
     from 19.41% 28.61%,
     curve to 20.24% 20.45% with 19.8% 25.02%,
@@ -1529,14 +1554,17 @@ img {
 }
 
 .xoBody {
-  width: 100%;
-  height: 100%;
+  width: 90%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  padding: 1rem; /* adds space inside box */
+  overflow: visible; /* lets text expand naturally */
+  max-height: none; /* remove any unintended height restriction */
 
   background: #761414;
   padding: 2vw;
@@ -1556,19 +1584,19 @@ img {
 
   margin-left: 8vw;
   margin-right: 8vw;
-  padding-top: 5vh;
-  padding-left: 2vw;
-  padding-right: 2vw;
 
   font-weight: bold;
+  font-size: 2.7vh;
   color: white;
+
+  padding-left: 3vw;
+  padding-right: 3vw;
+
   border-radius: 2vw;
 
   max-width: 90%;
   word-wrap: break-word;
   overflow-wrap: break-word;
-
-  font-size: 2.5vh;
 }
 
 /* ----- Yogurt Background ----- */
@@ -1615,78 +1643,12 @@ img {
 
   padding-left: 4vw;
   padding-right: 4vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
 }
 
 /* ------------ Section for sizing up the smaller images ----------------- */
-
-#jackfruitImg {
-  transform: scale(1.3); /* 30% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#lemonImg {
-  height: 50vh;
-}
-
-#milkImg {
-  height: 50vh;
-}
-
 #nuggetImg {
-  transform: scale(2.3); /* 130% bigger */
-  transform-origin: bottom; /* keeps it centered */
-}
-
-#potatoImg {
-  transform: scale(1.5); /* 50% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#quinoaImg {
-  transform: scale(1.4); /* 40% bigger */
-  transform-origin: center; /* keeps it centered */
-  margin-top: 4vh;
-}
-
-#raspberryImg {
-  height: 40vh;
-}
-
-#salmonImg {
-  height: 40vh;
-}
-
-#tomatoImg {
   transform: scale(1.2); /* 20% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#udonImg {
-  transform: scale(2.5); /* 150% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#vealImg {
-  transform: scale(1.5); /* 50% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#watermelonImg {
-  transform: scale(1.4); /* 40% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#xoImg {
-  transform: scale(1.7); /* 70% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#yogurtImg {
-  transform: scale(1.2); /* 20% bigger */
-  transform-origin: center; /* keeps it centered */
-}
-
-#zucchiniImg {
-  transform: scale(1.2); /* 20% bigger */
-  transform-origin: center; /* keeps it centered */
+  transform-origin: bottom;
 }
