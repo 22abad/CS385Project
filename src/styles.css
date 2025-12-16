@@ -459,7 +459,11 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: radial-gradient(circle, #bf00cd 60%, transparent 21%);
+  background-image: radial-gradient(
+    circle closest-side at center,
+    #bf00cd 60%,
+    transparent 21%
+  );
   background-size: 30px 30px;
   border-radius: 10vw;
   mix-blend-mode: multiply;
@@ -569,13 +573,33 @@ body {
   justify-content: center;
   align-content: center;
 
-  --mask: radial-gradient(1.93vw at 2.65vw 50%, #000 99%, #0000 101%) 0
-      calc(50% - 2vw) / 51% 4vw repeat-y,
-    radial-gradient(1.93vw at -1.65vw 50%, #0000 99%, #000 101%) 1vw 50% /
-      calc(51% - 1vw) 4vw repeat-y,
-    radial-gradient(1.93vw at calc(100% - 2.65vw) 50%, #000 99%, #0000 101%)
+  --mask: radial-gradient(
+        circle closest-side at center,
+        1.93vw at 2.65vw 50%,
+        #000 99%,
+        #0000 101%
+      )
+      0 calc(50% - 2vw) / 51% 4vw repeat-y,
+    radial-gradient(
+        circle closest-side at center,
+        1.93vw at -1.65vw 50%,
+        #0000 99%,
+        #000 101%
+      )
+      1vw 50% / calc(51% - 1vw) 4vw repeat-y,
+    radial-gradient(
+        circle closest-side at center,
+        1.93vw at calc(100% - 2.65vw) 50%,
+        #000 99%,
+        #0000 101%
+      )
       100% calc(50% - 2vw) / 51% 4vw repeat-y,
-    radial-gradient(1.93vw at calc(100% + 1.65vw) 50%, #0000 99%, #000 101%)
+    radial-gradient(
+        circle closest-side at center,
+        1.93vw at calc(100% + 1.65vw) 50%,
+        #0000 99%,
+        #000 101%
+      )
       calc(100% - 1vw) 50% / calc(51% - 1vw) 4vw repeat-y;
   -webkit-mask: var(--mask);
   mask: var(--mask);
@@ -659,7 +683,8 @@ body {
         #0000 70deg 180deg
       ) -2vw 50% / 100% 2.8vw,
     /* rounded rectangle to tame corners */
-      radial-gradient(circle, #000 90%, #0000 100%) 50% 50% / 100% 100%;
+      radial-gradient(circle closest-side at center, #000 90%, #0000 100%) 50%
+      50% / 100% 100%;
 
   -webkit-mask-composite: destination-in;
   mask-composite: intersect;
