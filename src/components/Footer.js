@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles.css";
 
 function Footer() {
@@ -24,22 +25,22 @@ function Footer() {
               Discover
             </h5>
             <p>
-              <a
-                href="#"
+              <Link
+                to="/browse"
                 className="text-white"
                 style={{ textDecoration: "none" }}
               >
                 Browse Stores
-              </a>
+              </Link>
             </p>
             <p>
-              <a
-                href="#"
+              <Link
+                to="/AboutFoodWaste"
                 className="text-white"
                 style={{ textDecoration: "none" }}
               >
-                How it Works
-              </a>
+                About Food Waste
+              </Link>
             </p>
           </div>
 
@@ -49,13 +50,13 @@ function Footer() {
               Company
             </h5>
             <p>
-              <a
-                href="#"
+              <Link
+                to="/about"
                 className="text-white"
                 style={{ textDecoration: "none" }}
               >
                 About Us
-              </a>
+              </Link>
             </p>
             <p>
               <a

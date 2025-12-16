@@ -1,9 +1,21 @@
 import "../styles.css";
 import React from "react";
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 function Header() {
+  const { currentUser, logout } = useAuth();
+  const navigate = useNavigate();
+
+  async function handleLogout() {
+    try {
+      await logout();
+      navigate("/login");
+    } catch {
+      console.error("Failed to log out");
+    }
+  }
+
   return (
     <>
       {/* Navigation Bar */}
@@ -46,6 +58,23 @@ function Header() {
                 </Link>
               </li>
             </ul>
+            <div className="d-flex">
+              {currentUser ? (
+                <div className="d-flex align-items-center">
+                  <span className="text-light me-3">{currentUser.email}</span>
+                  <button
+                    onClick={handleLogout}
+                    className="btn btn-outline-light"
+                  >
+                    Log Out
+                  </button>
+                </div>
+              ) : (
+                <Link to="/login" className="btn btn-outline-light">
+                  Log In
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </nav>
