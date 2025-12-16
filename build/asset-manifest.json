@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.80b283ac.css",
+    "main.js": "/static/js/main.db80d3bb.js",
+    "static/media/Watermelon.png": "/static/media/Watermelon.c48ea1fd25eb9111702b.png",
+    "static/media/Kiwi.png": "/static/media/Kiwi.997d809c464d92c7b78a.png",
+    "static/media/Potato.png": "/static/media/Potato.7f1b59dbf7129e12eaae.png",
+    "static/media/Egg.png": "/static/media/Egg.e26ee013b34e150485a0.png",
+    "static/media/Milk.png": "/static/media/Milk.0300d47d03ed6396f634.png",
+    "static/media/Carrot.png": "/static/media/Carrot.89a6faf0f3238c9a749e.png",
+    "static/media/Fries.png": "/static/media/Fries.5325aae3b0d8ef6609d2.png",
+    "static/media/Onion.png": "/static/media/Onion.8619f82a4ab4c0661c06.png",
+    "static/media/Hotdog.png": "/static/media/Hotdog.69cd4644d646992c9110.png",
+    "static/media/Salmon.png": "/static/media/Salmon.b69ceb910003726f609b.png",
+    "static/media/GroceryBag.png": "/static/media/GroceryBag.6eefd43e97546d9359a8.png",
+    "static/media/Apple.png": "/static/media/Apple.4e2827aa1e3a4e4e2880.png",
+    "static/media/Raspberry.png": "/static/media/Raspberry.0e729ec02201b77e515c.png",
+    "static/media/Grapes.png": "/static/media/Grapes.0ff2970a2f1be0f36a5e.png",
+    "static/media/Donut.png": "/static/media/Donut.93df5d61e671c9b4cd4f.png",
+    "static/media/XOSauce.png": "/static/media/XOSauce.af83d92bc69542d4e3fb.png",
+    "static/media/Nuggets.png": "/static/media/Nuggets.e164919f23fbe9174b8a.png",
+    "static/media/Yogurt.png": "/static/media/Yogurt.48a97cead32a306a8907.png",
+    "static/media/Banana.png": "/static/media/Banana.ece3e25083812601f25c.png",
+    "static/media/Tomato.png": "/static/media/Tomato.b9dbd1c6e0dccf1e1910.png",
+    "static/media/Quinoa.png": "/static/media/Quinoa.f32900b5664090274117.png",
+    "static/media/FoodWaste.png": "/static/media/FoodWaste.c1440b682826bdd83faa.png",
+    "static/media/Lemon.png": "/static/media/Lemon.4e8836cad19a262f01a2.png",
+    "static/media/Veal.png": "/static/media/Veal.bb0bab786867b43387dc.png",
+    "static/media/IcebergLettuce.png": "/static/media/IcebergLettuce.aed6495aaa8874182b26.png",
+    "static/media/Zuchini.png": "/static/media/Zuchini.688405f5f4feafd5df8f.png",
+    "static/media/Jackfruit.png": "/static/media/Jackfruit.4166306eaea5b05324aa.png",
+    "static/media/Udon.png": "/static/media/Udon.ab5c98ec9dd2fa5c3340.png",
+    "index.html": "/index.html",
+    "main.80b283ac.css.map": "/static/css/main.80b283ac.css.map",
+    "main.db80d3bb.js.map": "/static/js/main.db80d3bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80b283ac.css",
+    "static/js/main.db80d3bb.js"
+  ]
+}
