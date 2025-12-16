@@ -1,46 +1,16 @@
 // src/Browse.js
-import React, { useState, useEffect } from "react";
-import { db } from "./firebase"; // Import db from firebase
-import { collection, getDocs } from "firebase/firestore"; // Import firestore functions
+import React from "react";
+import stores from "./data"; // Import the mock data
 import "./styles.css";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 
 function Browse() {
-  const [products, setProducts] = useState([]); // State for products
-  const navigate = useNavigate(); // Initialize useNavigate hook
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "stores"));
-        const productsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        
-        // Fisher-Yates shuffle algorithm
-        for (let i = productsData.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [productsData[i], productsData[j]] = [productsData[j], productsData[i]];
-        }
-
-        setProducts(productsData);
-      } catch (error) {
-        console.error("Error fetching products for Browse page: ", error);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  const handleReserveNow = () => {
-    navigate("/order"); // Navigate to the order page
-  };
-
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Save a Magic Bag nearby</h2>
       
       <div className="row">
         {/* Map through the stores data to create cards dynamically */}
-        {products.map((store) => (
+        {stores.map((store) => (
           <div key={store.id} className="col-md-4 col-sm-6 mb-4">
             {/* Card container with conditional class for sold-out items */}
             <div className={`card h-100 store-card ${store.itemsLeft === 0 ? 'sold-out' : ''}`}>
@@ -73,11 +43,7 @@ function Browse() {
                 </div>
                 
                 {/* Action Button */}
-                <button
-                  className="btn btn-outline-success w-100 mt-3"
-                  disabled={store.itemsLeft === 0}
-                  onClick={handleReserveNow} // 添加 onClick 事件
-                >
+                <button className="btn btn-outline-success w-100 mt-3" disabled={store.itemsLeft === 0}>
                     {store.itemsLeft === 0 ? "Check back tomorrow" : "Reserve Now"}
                 </button>
               </div>

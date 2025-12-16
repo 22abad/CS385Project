@@ -9,7 +9,9 @@
 <img src="https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
 <img src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
 <img src="https://img.shields.io/badge/Deployed%20on-Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare" />
-<img src="https://img.shields.io/badge/Firebase-Integration-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" />
+
+
+
 
 
 <img src="https://img.shields.io/github/last-commit/22abad/CS385Project?style=flat-square&color=green" alt="Last Commit" />
@@ -43,10 +45,6 @@ This project serves as our group submission for CS385.
 
 🛒 Dynamic Browse Section: Real-time rendering of store cards with "Sold Out" logic and dynamic styling based on item availability.
 
-🚀 Firebase Integration: Utilizes Firebase for real-time database (Firestore) for product management and user authentication.
-
-🔒 User Authentication: Implements secure user login, registration, global logout, and protected routes using Firebase Authentication.
-
 🎨 Modern Design: Custom CSS styling, including circular design elements and professional footer layout.
 
 🚧 Project Roadmap & Progress
@@ -63,27 +61,19 @@ Here is the current status of our development:
 
 [x] Global Footer: Professional footer with links and branding.
 
-[x] Navigation: React Router setup for multi-page navigation (including login, how-it-works).
+[ ] Navigation: React Router setup for multi-page navigation.
 
-[x] Order Page: Functionality to reserve items (with cart, place order).
+[ ] Order Page: Functionality to reserve items.
 
-[x] About Us Page: Team information and mission statement.
+[ ] About Us Page: Team information and mission statement.
 
-[x] State Management: Shopping cart or reservation state.
-
-[x] Firebase Product Management: Dynamic product listing from Firestore.
-
-[x] Firebase Authentication: User login, registration, and session management.
-
-[x] Database Utility Buttons: Add/Delete products for easy testing.
+[ ] State Management: Shopping cart or reservation state.
 
 💻 Technologies Used
 
 Frontend: React.js
 
 Styling: Bootstrap 5 & Custom CSS
-
-Backend/Database: Firebase (Firestore, Authentication)
 
 Deployment: Cloudflare Pages
 
@@ -95,68 +85,21 @@ To run this project locally, please follow these steps:
 
 1. Clone the repository
 
-```bash
-git clone https://github.com/22abad/CS385Project.git
+git clone [https://github.com/22abad/CS385Project.git](https://github.com/22abad/CS385Project.git)
 cd CS385Project
-```
+
 
 2. Install Dependencies
 
 Important: You must run this command to install the necessary node modules.
 
-```bash
 npm install
-```
 
-3. Firebase Configuration
 
-To connect your application to Firebase, you need to set up your Firebase project and provide its configuration details as environment variables.
+3. Run the App
 
-   a. **Firebase Project Setup:**
-      *   Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
-      *   Add a web app to your project and obtain your `firebaseConfig` object from the project settings.
-      *   Enable "Email/Password" provider in Firebase Authentication.
-
-   b. **Environment Variables:**
-      *   Create a file named `.env.local` in the root of your project. This file is ignored by Git and will not be committed.
-      *   Populate it with your Firebase configuration values. Each variable name **must** be prefixed with `REACT_APP_` for React to recognize it.
-      *   Example `.env.local` content (replace `YOUR_...` with your actual values):
-          ```
-          REACT_APP_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
-          REACT_APP_FIREBASE_AUTH_DOMAIN=YOUR_FIREBASE_AUTH_DOMAIN
-          REACT_APP_FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID
-          REACT_APP_FIREBASE_STORAGE_BUCKET=YOUR_FIREBASE_STORAGE_BUCKET
-          REACT_APP_FIREBASE_MESSAGING_SENDER_ID=YOUR_FIREBASE_MESSAGING_SENDER_ID
-          REACT_APP_FIREBASE_APP_ID=YOUR_FIREBASE_APP_ID
-          REACT_APP_FIREBASE_MEASUREMENT_ID=YOUR_FIREBASE_MEASUREMENT_ID
-          ```
-      *   You can find these values in your Firebase project settings under "Your apps" > "Web" > "Config".
-
-   c. **Local Development:**
-      *   After creating/modifying `.env.local`, you **must completely stop and restart** your local development server (`Ctrl+C` then `npm start`) for the new environment variables to take effect.
-
-   d. **Deployment:**
-      *   For deployment to platforms like Cloudflare Pages, you **must configure these `REACT_APP_FIREBASE_` environment variables directly** in your hosting provider's settings. Online environments do not read your local `.env.local` file. Refer to your hosting platform's documentation for exact steps.
-
-   e. **Firestore Indexes (for Order History):**
-      *   When querying Firestore with `where()` and `orderBy()`, you often need to create composite indexes. For the "Order History" feature, a specific index is required.
-      *   If you encounter errors like "The query requires an index," Firebase will usually provide a direct link in your browser's console to create it.
-      *   Alternatively, you can manually create the index in the Firebase Console:
-          *   Navigate to "Build" > "Firestore Database" > "Indexes".
-          *   Click "Create new index".
-          *   Configure with:
-              *   **Collection ID:** `orders`
-              *   **Fields:**
-                  *   `userId` (Ascending)
-                  *   `timestamp` (Descending)
-          *   Click "Create".
-      *   **Note:** Index creation can take several minutes to hours to become fully active.
-
-4. Run the App
-
-```bash
 npm start
-```
+
 
 Open http://localhost:3000 to view it in your browser.
 

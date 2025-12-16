@@ -1,23 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import 'bootstrap/dist/js/bootstrap.bundle.min'; // Import Bootstrap JS
-import './styles.css'; // Corrected import to styles.css
-import App from './App';
-import { AuthProvider } from './contexts/AuthContext';
-import { CartProvider } from './contexts/CartContext'; // Import CartProvider
-import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from "./App";
+
+import { BrowserRouter } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
 root.render(
-  <React.StrictMode>
-    <BrowserRouter> {/* Wrap with BrowserRouter */}
-      <AuthProvider>
-        <CartProvider> {/* Wrap AuthProvider with CartProvider */}
-          <App />
-        </CartProvider>
-      </AuthProvider>
+  <StrictMode>
+    <BrowserRouter>
+      <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </StrictMode>
 );
-

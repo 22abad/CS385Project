@@ -1,12 +1,9 @@
 import "../styles.css";
 import React from "react";
+
 import { Link } from "react-router-dom";
-import LogoutButton from "./LogoutButton"; // Import LogoutButton
-import { useAuth } from "../contexts/AuthContext"; // Import useAuth
 
 function Header() {
-  const { currentUser } = useAuth(); // Get current user from context
-
   return (
     <>
       {/* Navigation Bar */}
@@ -38,15 +35,8 @@ function Header() {
                   Order
                 </Link>
               </li>
-              {currentUser && ( // Conditionally render Order History link
-                <li className="nav-item">
-                  <Link to="/order-history" className="nav-link">
-                    Order History
-                  </Link>
-                </li>
-              )}
               <li className="nav-item">
-                <Link to="/about" className="nav-link">
+                <Link to="/AboutUs" className="nav-link">
                   About Us
                 </Link>
               </li>
@@ -55,11 +45,6 @@ function Header() {
                   About Food Waste
                 </Link>
               </li>
-              {currentUser && ( // Conditionally render LogoutButton
-                <li className="nav-item">
-                  <LogoutButton />
-                </li>
-              )}
             </ul>
           </div>
         </div>
