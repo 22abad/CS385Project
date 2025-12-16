@@ -683,8 +683,7 @@ body {
         #0000 70deg 180deg
       ) -2vw 50% / 100% 2.8vw,
     /* rounded rectangle to tame corners */
-      radial-gradient(circle closest-side at center, #000 90%, #0000 100%) 50%
-      50% / 100% 100%;
+      radial-gradient(ellipse, #000 90%, #0000 100%) 50% 50% / 100% 100%;
 
   -webkit-mask-composite: destination-in;
   mask-composite: intersect;
@@ -970,29 +969,6 @@ body {
   z-index: 2;
 }
 
-.nuggetBody::before {
-  content: "";
-  position: absolute;
-  width: 35vh; /* bitemark size */
-  height: 35vh;
-  top: 10%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  background-color: #deffdb;
-
-  -webkit-mask-composite: destination-in;
-  mask-composite: intersect;
-
-  aspect-ratio: 1;
-  --g: radial-gradient(circle closest-side at center, #000 71%, #0000 71.5%)
-    no-repeat;
-  mask: 100% 50% var(--g), 93.301% 75% var(--g), 75% 93.301% var(--g),
-    50% 100% var(--g), 25% 93.301% var(--g), 6.699% 75% var(--g),
-    0% 50% var(--g), 6.699% 25% var(--g), 25% 6.699% var(--g), 50% 0% var(--g),
-    75% 6.699% var(--g), 93.301% 25% var(--g),
-    radial-gradient(100% 100%, #000 38%, #0000 39%);
-}
-
 .nuggetBody p {
   display: block; /* flex prevents shape-outside wrapping */
   text-align: center;
@@ -1000,7 +976,7 @@ body {
   align-content: center;
   position: relative;
 
-  margin-left: 12vh;
+  margin-left: 14vh;
 
   padding-top: 12vh;
   padding-right: 6vh;
