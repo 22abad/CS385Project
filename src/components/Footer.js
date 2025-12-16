@@ -2,6 +2,7 @@ The user wants to commit a change to the Readme.md file to fix a typo and update
 
 ```bash
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles.css";
 
 function Footer() {
