@@ -1,13 +1,32 @@
 // src/Browse.js
-import React from "react";
-import stores from "./data"; // Import the mock data
+import React, { useState, useEffect } from "react";
+import { db } from "./firebase";
+import { collection, getDocs } from "firebase/firestore";
 import "./styles.css";
 import { useCart } from "./contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 
 function Browse() {
+  const [products, setProducts] = useState([]);
   const { addToCart } = useCart();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "stores"));
+        const productsData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProducts(productsData);
+      } catch (error) {
+        console.error("Error fetching products: ", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const handleReserve = (store) => {
     addToCart({
@@ -28,7 +47,7 @@ function Browse() {
 
       <div className="row">
         {/* Map through the stores data to create cards dynamically */}
-        {stores.map((store) => (
+        {products.map((store) => (
           <div key={store.id} className="col-md-4 col-sm-6 mb-4">
             {/* Card container with conditional class for sold-out items */}
             <div
