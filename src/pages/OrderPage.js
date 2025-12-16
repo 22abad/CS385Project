@@ -19,7 +19,12 @@ export default function OrderPage() {
 
   return (
     <div className="container mt-5 pt-5">
-      <h2 className="mb-4">Your Order</h2>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2>Your Order</h2>
+        <Link to="/order-history" className="btn btn-outline-primary">
+          View Order History
+        </Link>
+      </div>
 
       {cart.length === 0 ? (
         <div className="alert alert-info">
